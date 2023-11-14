@@ -9,6 +9,8 @@ import {
 import Login from "../pages/Login";
 import Signup from "../pages/Signup";
 import Explore from "../pages/Explore";
+import { Link } from "react-router-dom";
+
 
 export default function Navbar() {
   return (
@@ -17,6 +19,9 @@ export default function Navbar() {
       display="flex"
       alignItems="center"
       justifyContent="space-between"
+      border="1px"
+
+      borderColor="gray.200"
     >
       <Box
         ml={5}
@@ -25,6 +30,7 @@ export default function Navbar() {
         display="flex"
         alignItems="center"
         justifyContent="space-between"
+       
       >
         <Breadcrumb spacing="8px" separator="">
           <BreadcrumbItem isCurrentPage>
@@ -37,26 +43,19 @@ export default function Navbar() {
             </BreadcrumbLink>
           </BreadcrumbItem>
 
-            {/* <BreadcrumbItem color="#2A2A2A" fontWeight="bold">
-              <BreadcrumbLink
-                href=""
-                _hover={{ color: "#E51075", textDecoration: "none" }}
-              >
-                Explore 
-              </BreadcrumbLink>
-            </BreadcrumbItem> */}
+          
           <Explore/>
 
           <BreadcrumbItem color="#2A2A2A" fontWeight="bold">
             <BreadcrumbLink
-              href="/ourtoptenFinds"
+              href="/ourTop10Finds"
               _hover={{ color: "#E51075", textDecoration: "none" }}
             >
               {" "}
               Our Top 10 Finds
             </BreadcrumbLink>
           </BreadcrumbItem>
-
+          {/* <Link to="/ourTop10Finds">our top 10finds</Link> */}
           <BreadcrumbItem color="#2A2A2A" fontWeight="bold">
             <BreadcrumbLink
               href="/teamFavourites"
@@ -113,6 +112,7 @@ export default function Navbar() {
         </Breadcrumb>
        
       </Box>
+     
     </Box>
   );
 }
