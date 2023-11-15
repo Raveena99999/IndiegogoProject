@@ -1,4 +1,6 @@
 import React, { useContext } from "react";
+import { useDisclosure } from "@chakra-ui/react";
+
 import {
   Box,
   Flex,
@@ -21,11 +23,12 @@ import {
   FormControl,
   FormLabel,
 } from "@chakra-ui/react";
-import { AuthSlideContext } from "../context/AuthContextProvider";
 
 export default function Footer() {
-  const { isOpen, onOpen, onClose, initialRef, finalRef } =
-    useContext(AuthSlideContext);
+  const { isOpen, onOpen, onClose } = useDisclosure()
+
+  const initialRef = React.useRef(null)
+  const finalRef = React.useRef(null)
   return (
     <div>
       <Box

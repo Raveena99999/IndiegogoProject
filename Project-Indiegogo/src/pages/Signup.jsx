@@ -25,7 +25,7 @@ import { SignupContext } from "../context/SignupContextProvider";
 export default function Signup() {
   const { isOpenSignup, onOpenSignup, onCloseSignup, initialRefSignup,finalRefSignup } =
     useContext(SignupContext);
-   
+   console.log("on",onOpenSignup)
 
   return (
     <div>
