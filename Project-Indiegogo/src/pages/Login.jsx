@@ -20,27 +20,29 @@ import {
   Input,
   Link,
 } from "@chakra-ui/react";
-import { AuthSlideContext } from "../context/AuthContextProvider";
+import { LoginContext } from "../context/LoginContextProvider";
 
-export default function Login() {
-  const { isOpen, onOpen, onClose, initialRef, finalRef } =
-    useContext(AuthSlideContext);
+ function Login() {
+ 
+
+  const {  isOpenLogin, onOpenLogin, onCloseLogin,initialRefLogin,finalRefLogin} =
+    useContext(LoginContext);
   return (
     <>
       <Breadcrumb>
         <BreadcrumbItem color="#2A2A2A" fontWeight="bold">
           <BreadcrumbLink
-            onClick={onOpen}
+            onClick={onOpenLogin}
             _hover={{ color: "#E51075", textDecoration: "none" }}
             mr="12px"
           >
             Log In
           </BreadcrumbLink>
           <Modal
-            initialFocusRef={initialRef}
-            finalFocusRef={finalRef}
-            isOpen={isOpen}
-            onClose={onClose}
+            initialFocusRef={initialRefLogin}
+            finalFocusRef={finalRefLogin}
+            isOpen={isOpenLogin}
+            onClose={onCloseLogin}
           >
             <ModalOverlay />
             <ModalContent h="600px">
@@ -60,7 +62,7 @@ export default function Login() {
 
                 <FormControl>
                   <FormLabel>Email</FormLabel>
-                  <Input ref={initialRef} placeholder="Your Email" />
+                  <Input ref={initialRefLogin} placeholder="Your Email" />
                 </FormControl>
 
                 <FormControl mt={4}>
@@ -125,3 +127,4 @@ export default function Login() {
     </>
   );
 }
+export default Login

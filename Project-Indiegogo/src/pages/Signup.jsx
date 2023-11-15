@@ -21,27 +21,29 @@ import {
   Link,
   Checkbox,
 } from "@chakra-ui/react";
-import { AuthSlideContext } from "../context/AuthContextProvider";
+import { SignupContext } from "../context/SignupContextProvider";
 export default function Signup() {
-  const { isOpen, onOpen, onClose, initialRef, finalRef } =
-    useContext(AuthSlideContext);
+  const { isOpenSignup, onOpenSignup, onCloseSignup, initialRefSignup,finalRefSignup } =
+    useContext(SignupContext);
+   
 
   return (
     <div>
       <Breadcrumb>
         <BreadcrumbItem color="#2A2A2A" fontWeight="bold">
           <BreadcrumbLink
-            onClick={onOpen}
+            onClick={onOpenSignup}
             _hover={{ color: "#E51075", textDecoration: "none" }}
             mr="12px"
           >
             Sign Up
           </BreadcrumbLink>
+        
           <Modal
-            initialFocusRef={initialRef}
-            finalFocusRef={finalRef}
-            isOpen={isOpen}
-            onClose={onClose}
+            initialFocusRef={initialRefSignup}
+            finalFocusRef={finalRefSignup}
+            isOpen={isOpenSignup}
+            onClose={onCloseSignup}
           >
             <ModalOverlay />
             <ModalContent h="800px">
@@ -61,17 +63,17 @@ export default function Signup() {
 
                 <FormControl>
                   <FormLabel>First Name</FormLabel>
-                  <Input ref={initialRef} placeholder="Your First Name" />
+                  <Input ref={initialRefSignup} placeholder="Your First Name" />
                 </FormControl>
 
                 <FormControl>
                   <FormLabel>Last Name</FormLabel>
-                  <Input ref={initialRef} placeholder="Your Last Name" />
+                  <Input  placeholder="Your Last Name" />
                 </FormControl>
 
                 <FormControl>
                   <FormLabel>Email</FormLabel>
-                  <Input ref={initialRef} placeholder="Your Email" />
+                  <Input  placeholder="Your Email" />
                 </FormControl>
 
                 <FormControl mt={4}>
