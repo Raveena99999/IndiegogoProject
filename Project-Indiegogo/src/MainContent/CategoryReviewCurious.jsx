@@ -123,7 +123,7 @@ export default function CategoryReviewCurious({}) {
           ml="20px"
           _hover={{bg:"#E51075" ,bg:"white", borderColor:"gray"}}
         >
-          LEARN NOW
+          <a href="https://www.indiegogo.com/about/what-we-do"> LEARN NOW</a>
         </Button>
       </Box>
 

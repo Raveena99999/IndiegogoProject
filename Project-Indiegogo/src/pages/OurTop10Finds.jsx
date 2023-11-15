@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { Heading, Text, Flex, Box, Spacer } from "@chakra-ui/react";
-import { Grid, GridItem,SimpleGrid,Link,Image } from "@chakra-ui/react";
+import { SimpleGrid,Link,Image } from "@chakra-ui/react";
 
 let ourTop10Card = [
   {
@@ -10,6 +10,9 @@ let ourTop10Card = [
     funding: "FUNDING",
     title: "Movably Pro-The cure for the common chair",
     link: "https://www.indiegogo.com/projects/movably-pro-the-freedom-of-movement-at-your-desk/coll",
+    rating:"$101,377 ",
+    usdRaised:"USD raised",
+    percent:"107%"
   },
 
   {
@@ -18,6 +21,10 @@ let ourTop10Card = [
     funding: "FUNDING",
     title: "ZERO PUMP: World smallest pump for sleeping pads",
     link: "https://www.indiegogo.com/projects/zero-pump-world-s-smallest-pump-for-sleeping-pads/coll",
+    rating:"$101,377 USD raised",
+    usdRaised:"USD raised",
+    percent:"107%"
+
   },
 
   {
@@ -25,6 +32,10 @@ let ourTop10Card = [
     funding: "FUNDING",
     title: "Neakasa M1: Open-Top Self-Cleaning Cat Litter Box",
     link: "https://www.indiegogo.com/projects/neakasa-m1-open-top-self-cleaning-cat-litter-box/coll",
+    
+    rating:"$101,377 ",
+    usdRaised:"USD raised",
+    percent:"107%"
   },
 
   {
@@ -32,6 +43,10 @@ let ourTop10Card = [
     funding: "FUNDING",
     title: "Casiris H6:4K UST Tri-color Laser Project",
     link: "https://www.indiegogo.com/projects/casiris-h6-4k-ust-tri-color-laser-projector/coll",
+    rating:"$101,377 ",
+
+    usdRaised:"USD raised",
+    percent:"107%"
   },
 
   {
@@ -39,6 +54,10 @@ let ourTop10Card = [
     funding: "FUNDING",
     title: "Deeper Connect Air:Portable Decentralized VPN",
     link: "https://www.indiegogo.com/projects/deeper-connect-air-world-s-best-vpn-router/coll",
+    rating:"$101,377 ",
+
+    usdRaised:"USD raised",
+    percent:"107%"
   },
 
   {
@@ -46,6 +65,10 @@ let ourTop10Card = [
     funding: "FUNDING",
     title: "RingOne-world latest and most advanced smartring",
     link: "https://www.indiegogo.com/projects/ring-one-the-most-advanced-smart-ring-for-you/coll",
+    rating:"$101,377 ",
+
+    usdRaised:"USD raised",
+    percent:"107%"
   },
 
   {
@@ -53,6 +76,10 @@ let ourTop10Card = [
     funding: "FUNDING",
     title: "World First Refrigerated Smart Pet Feeder",
     link: "https://www.indiegogo.com/projects/world-s-first-refrigerated-smart-pet-feeder/coll",
+    rating:"$101,377 ",
+
+    usdRaised:"USD raised",
+    percent:"107%"
   },
 
   {
@@ -60,6 +87,10 @@ let ourTop10Card = [
     funding: "FUNDING",
     title: "AYANEO POCKET AIR: Ultra thin OLED Android Handheld",
     link: "https://www.indiegogo.com/projects/ayaneo-pocket-air-ultra-thin-oled-android-handheld/coll",
+    rating:"$101,377 ",
+
+    usdRaised:"USD raised",
+    percent:"107%"
   },
 
   {
@@ -67,52 +98,61 @@ let ourTop10Card = [
     funding: "FUNDING",
     title: "Paperlike color: World forst color E-link monitor",
     link: "https://www.indiegogo.com/projects/paperlike-color-world-first-color-e-ink-monitor/coll",
+    rating:"$101,377 ",
+
+    usdRaised:"USD raised",
+    percent:"107%"
   },
   {
     image: "https://media.istockphoto.com/id/1545399259/photo/cat-litter-box.jpg?s=612x612&w=0&k=20&c=CkKDEKgiHuCqiEubphS_iJl74gy428p-6lR6fcUBIZE=",
     funding: "FUNDING",
     title: "Petsnowy :The innovative self-cleaning litter box",
     link: "https://www.indiegogo.com/projects/petsnowy-the-innovative-self-cleaning-litter-box/coll",
+    rating:"$101,377 ",
+
+    usdRaised:"USD raised",
+    percent:"107%"
   },
 ];
 
 export default function OurTop10Finds() {
   return (
-    <div>
+    <div border="1px" >
       <Navbar />
-      <Box bg="gray.200">
-      <Heading mt="60px" textAlign="center" as="h1">
+      <Box bg="rgb(245,245,245)"  >
+      <hr style={{ border:"2px solid #E51075" ,width:"10%" ,margin:"auto",}}/>
+      
+      <Heading mt="30px" textAlign="center" as="h1"  >
         10 Cool & Clever Finds
       </Heading>
       <Text mt="25px" w="590px" mx="auto">
         Discover your next "a-ha" moment in our roundup of standout projects,
         from live crowdfunding & InDemand campaigns to innovative products
-        shipping now.
+        shiping now.
       </Text>
       <Flex w="500px" mx="auto" mt="15px">
-        <Box p="4" border="1px" w="160px" h="40px" fontSize="13px">
-          <Flex>
-            <Box>
-              <Text>SHARE</Text>
-            </Box>
-          </Flex>
+        <Box bg="#405D9D" p="4" borderRadius="2px" w="160px" h="40px" fontSize="13px" display="flex" justifyContent="space-evenly" alignItems="center">
+         
+              <Image h="20px" src="https://cdn-icons-png.flaticon.com/128/1240/1240964.png"/>
+              <Text color="white">SHARE</Text>
+          
         </Box>
         <Spacer />
 
-        <Box p="4" border="1px" w="160px" h="40px">
-          <Text>TWEET</Text>
+        <Box bg="#2C99D7" p="4" borderRadius="2px" w="160px" h="40px" fontSize="13px" display="flex" justifyContent="space-evenly" alignItems="center">
+          <Image h="20px" src="https://cdn-icons-png.flaticon.com/128/2504/2504947.png"/>
+          <Text color="white">TWEET</Text>
         </Box>
         <Spacer />
 
-        <Box p="4" border="1px" w="160px" h="40px">
-          <Text>FOLLOW</Text>
+        <Box _hover={{backgroundColor:"#E51075" }} p="4" border="2px" borderColor="#E51075" borderRadius="2px" w="160px" h="40px" fontSize="16px" display="flex" justifyContent="space-evenly" alignItems="center">
+        <Image h="20px" src="https://cdn-icons-png.flaticon.com/128/4340/4340223.png"/>
+
+          <Text color="#E51075" _hover={{color:"white" }} >FOLLOW</Text>
         </Box>
       </Flex>
 
-      {/* <Grid templateColumns="repeat(5, 1fr)" gap={6}>
-        <GridItem w="580px" h="600" border="1px" ml="16" mt="50" />
-        <GridItem w="580px" h="600" border="1px" mt="15" mt="50" />
-      </Grid> */}
+     
 
       <SimpleGrid columns={2} spacing={1} w="90%" mx="auto" >
         {/* {cardData.posts.map((data) => ( */}
@@ -125,6 +165,17 @@ export default function OurTop10Finds() {
             ml="" mt="50"
             key={data.id}
             position="relative"
+            style={{
+              transition: "transform 0.3s ease", // Add transition effect
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "translateY(-5px)"; // Apply scale transformation on hover
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "translateY(0)"; // Revert back to normal scale when hover ends
+            }}
+
+
           >
             <Image h="300px" w="580px" src={data.image} alt="project" />
             <Text
@@ -145,13 +196,15 @@ export default function OurTop10Finds() {
             >
               <Link href={data.link}>{data.title}</Link>
             </Text>
-            {/* <Text fontSize="14px" color="#6A6A6A" ml="15px" mt="7px">
-              {data.description}
-            </Text> */}
+            <Flex justifyContent="space-between"  w="92%" mx="auto">
+              <Box display="flex">
+           <Heading as="h3" size="md" mt="70px">{data.rating}</Heading>
+           <Text  mt="70px">{data.usdRaised}</Text>
+           </Box>
+           <Text  mt="70px">{data.percent}</Text>
+           </Flex>
+           <hr style={{width:"90%" , margin:"auto",border:"4px solid #35CA97", borderRadius:"5px",marginTop:"20px"}}/>
 
-            {/* <Text fontSize="14px" color="#6A6A6A" ml="15px" mt="7px">
-              {data.category}
-            </Text> */}
           </Box>
         ))}
       </SimpleGrid>

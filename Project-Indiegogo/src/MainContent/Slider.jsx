@@ -1,9 +1,11 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { AuthSlideContext } from "../context/AuthContextProvider";
-import { Heading, Text, Button, Box } from "@chakra-ui/react";
+import { Heading, Text, Button, Box ,Link} from "@chakra-ui/react";
+import Signup from "../pages/Signup";
 
 export default function Slider() {
   const { slide, setSlide, images } = useContext(AuthSlideContext);
+
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -22,7 +24,7 @@ export default function Slider() {
   };
 
   return (
-    <div>
+    <div position="relative">
       <img
         style={{ width: "100%", height: "470px" }}
         src={images[slide]}
@@ -45,8 +47,9 @@ export default function Slider() {
         m="auto"
         mt="20px"
       >
-        <Button fontSize="14px" color="white" bg="#E51075" borderRadius="2px" _hover={{bg:"#E51075"}}>
+ <Button  fontSize="14px" color="white" bg="#E51075" borderRadius="2px" _hover={{bg:"#E51075"}}>
           SIGN UP NOW
+           
         </Button>
         <Button
           fontSize="14px"
@@ -58,7 +61,8 @@ export default function Slider() {
           ml="20px"
           _hover={{bg:"#E51075" ,bg:"white", borderColor:"gray"}}
         >
-          LEARN NOW
+          <a href="https://www.indiegogo.com/about/what-we-do"> LEARN NOW</a>
+         
         </Button>
       </Box>
     </div>
