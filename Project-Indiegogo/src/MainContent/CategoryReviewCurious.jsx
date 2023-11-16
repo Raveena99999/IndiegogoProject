@@ -13,6 +13,8 @@ import Signup from '../pages/Signup';
 export default function CategoryReviewCurious({}) {
   return (
     <div>
+
+{/* 
 <Text fontSize="34px" textAlign="center" mt="  35px"  >Which categories interest you?</Text>
 <Text fontSize="18px" textAlign="center" mt="15px"  >Discover projects just for you and get great recommendations when you select your interests.
 </Text>
@@ -23,6 +25,8 @@ export default function CategoryReviewCurious({}) {
 
 <Flex
  mx="auto" w="92%" gap="40px" mt="5px"
+
+ 
 
  >
   <Box p='4'  w="300px" h="120px" _hover={{bg:"gray.200"}}>
@@ -59,7 +63,123 @@ export default function CategoryReviewCurious({}) {
 
   </Box>
 
+</Flex> */}
+
+
+<Flex direction="column" alignItems="center" mt={{ base: "35px", md: "70px" ,lg:"2px" }} >
+      <Text fontSize="34px" textAlign="center" mt="35px">
+        Which categories interest you?
+      </Text>
+      <Text fontSize="18px" textAlign="center" mt="15px">
+        Discover projects just for you and get great recommendations when you select your interests.
+      </Text>
+      <Button
+        _hover={{ bg: "white", borderColor: "gray" }}
+        mt="15px"
+        fontSize="14px"
+        bg="white"
+        border="1px"
+        borderColor="gray.200"
+        display="block"
+        mx="auto"
+      >
+        SIGN UP AND SELECT INTEREST
+      </Button>
+      <Text fontSize="18px" textAlign="center" mt="12px">
+        Or explore our top categories
+      </Text>
+
+      <Flex
+        mx="auto"
+        w="92%"
+        gap="100px"
+        mt="5px"
+        flexWrap="wrap"
+        justifyContent="center"
+        maxW="90%"
+      >
+        <Box p="4" w="100px" h="120px" _hover={{ bg: "gray.200" }} mb="20px">
+          <Image
+            h="auto"
+            maxH="90px"
+            mx="auto"
+            mt={{ base: "-10px", md: "0" }}
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJe_rK-sFAheFrfgqZw1-1udAbPuby6U4U3g&usqp=CAU"            alt="Category 1"
+          />
+          <Text textAlign="center" fontSize="12px" mt={{ base: "8px", md: "5px" }}>
+            Home
+          </Text>
+        </Box>
+
+        <Box p="4" w="100px" h="120px" _hover={{ bg: "gray.200" }} mb="20px">
+          <Image
+            h="auto"
+            maxH="90px"
+            mx="auto"
+            mt={{ base: "-10px", md: "0" }}
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-CmqA5YpjIAT6BQ8cLPcVmEwyg0FJy05BLQ&usqp=CAU"            alt="Category 2"
+          />
+          <Text textAlign="center" fontSize="12px" mt={{ base: "8px", md: "5px" }}>
+            Phone & Accossories
+          </Text>
+        </Box>
+
+        <Box p="4" w="100px" h="120px" _hover={{ bg: "gray.200" }} mb="20px">
+          <Image
+            h="auto"
+            maxH="90px"
+            mx="auto"
+            mt={{ base: "-10px", md: "0" }}
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZeP3-Mr54tydp4Bf__Rzdk6Z403NMHPvz6w&usqp=CAU"          />
+          <Text textAlign="center" fontSize="12px" mt={{ base: "8px", md: "5px" }}>
+            Travel & Outdoor
+          </Text>
+        </Box>
+
+        <Box p="4" w="100px" h="120px" _hover={{ bg: "gray.200" }} mb="20px">
+          <Image
+            h="auto"
+            maxH="90px"
+            mx="auto"
+            mt={{ base: "-10px", md: "0" }}
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnp6Dcx-fohZm9tJD_WbtT4dyjJ5Uw_4ArFA&usqp=CAU"/>          <Text textAlign="center" fontSize="12px" mt={{ base: "8px", md: "5px" }}>
+            Travel & Outdoor
+          </Text>
+        </Box>
+
+
+        <Box p="4" w="100px" h="120px" _hover={{ bg: "gray.200" }} mb="20px">
+          <Image
+            h="auto"
+            maxH="90px"
+            mx="auto"
+            mt={{ base: "-10px", md: "0" }}
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDkG9Ga5cQ0PIEURedHHIBPDIFHqOD5BcyCg&usqp=CAU"/>                  <Text textAlign="center" fontSize="12px" mt={{ base: "8px", md: "5px" }}>
+            Audio
+          </Text>
+        </Box>
+       
+        <Box p="4" w="100px" h="120px" _hover={{ bg: "gray.200" }} mb="20px">
+          <Image
+            h="auto"
+            maxH="90px"
+            mx="auto"
+            mt={{ base: "-10px", md: "0" }}
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3bMimmCiy6J0nkTUja9DWTPj1Wcr4gzD-PQ&usqp=CAU"/>              <Text textAlign="center" fontSize="12px" mt={{ base: "8px", md: "5px" }}>
+            Films
+          </Text>
+        </Box>
+
+      </Flex>
+
 </Flex>
+
+
+
+
+
+
+
 
 
 <Text fontSize="34px" textAlign="center" mt="35px">From the Indiegogo Review</Text>

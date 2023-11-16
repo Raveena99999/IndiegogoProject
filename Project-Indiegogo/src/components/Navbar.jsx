@@ -48,7 +48,9 @@ export default function Navbar() {
       <Box
         ml={5}
         h="65px"
-        w="600px"
+        // w="600px"
+        w={{ base: "100%", md: "600px" }}
+
         display="flex"
         alignItems="center"
         justifyContent="space-between"
@@ -105,15 +107,19 @@ export default function Navbar() {
       </Box>
 
       <Box
-        h="65px"
-        w="420px"
+        // h="65px"
+        // w="420px"
+        h="auto"
+        w={{ base: "100%", md: "420px" }}
+
         display="flex"
         alignItems="center"
         justifyContent="space-around"
 
       >
-        <Breadcrumb separator=""   >
-          <BreadcrumbItem color="#2A2A2A" fontWeight="bold">
+        <Breadcrumb separator=""       
+ >
+          <BreadcrumbItem color="#2A2A2A" fontWeight="bold"  >
             <BreadcrumbLink
               href="/startaCompaign"
               target="_blank"
@@ -123,7 +129,7 @@ export default function Navbar() {
             </BreadcrumbLink>
           </BreadcrumbItem>
 
-          <BreadcrumbItem color="#2A2A2A" fontWeight="bold">
+          <BreadcrumbItem color="#2A2A2A" fontWeight="bold" >
             <BreadcrumbLink
               href="/whatweDo"
               target="_blank"
@@ -135,7 +141,7 @@ export default function Navbar() {
           {/* <Login/> */}
 
           {finalObj.firstName ? ( 
-            <BreadcrumbItem color="#2A2A2A" fontWeight="bold">
+            <BreadcrumbItem color="#2A2A2A" fontWeight="bold" >
               <h1>{}</h1>
             </BreadcrumbItem>
           ) : (
