@@ -13,15 +13,18 @@ import Signup from '../pages/Signup';
 export default function CategoryReviewCurious({}) {
   return (
     <div>
-<Text fontSize="34px" textAlign="center" mt="35px">Which categories interest you?</Text>
-<Text fontSize="18px" textAlign="center" mt="15px">Discover projects just for you and get great recommendations when you select your interests.
+<Text fontSize="34px" textAlign="center" mt="  35px"  >Which categories interest you?</Text>
+<Text fontSize="18px" textAlign="center" mt="15px"  >Discover projects just for you and get great recommendations when you select your interests.
 </Text>
 <Button _hover={{bg:"white", borderColor:"gray"}} mt="15px" fontSize="14px"  bg="white" border="1px" borderColor="gray.200" display="block" mx="auto" >SIGN UP AND SELECT INTEREST</Button>
-<Text mt="12px" fontSize="18px" textAlign="center">Or explore our top categories
+<Text mt="12px" fontSize="18px" textAlign="center" >Or explore our top categories
 </Text>
 
 
-<Flex mx="auto" w="92%" gap="40px" mt="5px">
+<Flex
+ mx="auto" w="92%" gap="40px" mt="5px"
+
+ >
   <Box p='4'  w="300px" h="120px" _hover={{bg:"gray.200"}}>
 <Image h="60px" mx="auto" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJe_rK-sFAheFrfgqZw1-1udAbPuby6U4U3g&usqp=CAU"/>
 <Text textAlign="center" fontSize="12px" mt="8px">HOME</Text>

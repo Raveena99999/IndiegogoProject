@@ -1,3 +1,5 @@
+
+
 import React from "react";
 import {
   Breadcrumb,
@@ -10,13 +12,27 @@ import {
 import Login from "../pages/Login";
 import Signup from "../pages/Signup";
 import Explore from "../pages/Explore";
-import { Link } from "react-router-dom";
-
+import Dropdown from "./Dropdown";
 
 export default function Navbar() {
   const handleClick =()=>{
     window.location.href="/"
   }
+  let newObj=localStorage.getItem("myobject")
+  let finalObj=JSON.parse(newObj)
+  // console.log(newObj,"navbar")
+ console.log("firstname",finalObj.firstName)
+
+  const openDropdown = () => {
+    if (dropdownRef && dropdownRef.current) {
+      dropdownRef.current.onOpen();
+    }
+  };
+  const dropdownRef = React.useRef();
+
+
+
+
   return (
     <Box 
       h="65px"
@@ -26,6 +42,8 @@ export default function Navbar() {
       border="1px"
 
       borderColor="gray.200"
+      flexDirection={{ base: "column", md: "row" }} 
+      mb={{ base: "3", sm: "4", md: "6" ,lg:"0" }}
     >
       <Box
         ml={5}
@@ -34,9 +52,11 @@ export default function Navbar() {
         display="flex"
         alignItems="center"
         justifyContent="space-between"
+
        
       >
-        <Breadcrumb spacing="8px" separator="" >
+        <Breadcrumb spacing="8px" separator=""       
+>
           <BreadcrumbItem isCurrentPage onClick={handleClick}>
             <BreadcrumbLink href="/">
               <Image 
@@ -90,8 +110,9 @@ export default function Navbar() {
         display="flex"
         alignItems="center"
         justifyContent="space-around"
+
       >
-        <Breadcrumb separator="">
+        <Breadcrumb separator=""   >
           <BreadcrumbItem color="#2A2A2A" fontWeight="bold">
             <BreadcrumbLink
               href="/startaCompaign"
@@ -111,11 +132,37 @@ export default function Navbar() {
               What We Do
             </BreadcrumbLink>
           </BreadcrumbItem>
-          <Login/>
-          <Signup />
+          {/* <Login/> */}
+
+          {finalObj.firstName ? ( 
+            <BreadcrumbItem color="#2A2A2A" fontWeight="bold">
+              <h1>{}</h1>
+            </BreadcrumbItem>
+          ) : (
+           
+            <Login />
+          )}
+
+
+
+          {finalObj.firstName ? ( 
+          
+            <Dropdown ref={dropdownRef} firstName={finalObj.firstName} />
+
+          ) : (
+           
+            <Signup />
+          )}
+
+          {/* <Signup/> */}
         </Breadcrumb>
+
+
+       
+      
        
       </Box>
+
      
     </Box>
   );

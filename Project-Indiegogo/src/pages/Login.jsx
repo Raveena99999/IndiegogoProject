@@ -27,6 +27,7 @@ import { LoginContext } from "../context/LoginContextProvider";
 
   const {  isOpenLogin, onOpenLogin, onCloseLogin,initialRefLogin,finalRefLogin} =
     useContext(LoginContext);
+    console.log("hy", onOpenLogin)
   return (
     <>
       <Breadcrumb>

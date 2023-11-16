@@ -1,9 +1,7 @@
-import React, { useContext } from "react";
 import { useDisclosure } from "@chakra-ui/react";
-
+import React from "react";
 import {
   Box,
-  Flex,
   Text,
   Link,
   Heading,
@@ -20,8 +18,7 @@ import {
   ModalBody,
   ModalCloseButton,
   Select,
-  FormControl,
-  FormLabel,
+ 
 } from "@chakra-ui/react";
 
 export default function Footer() {
@@ -37,6 +34,7 @@ export default function Footer() {
         h="660px"
         mt={10}
         bg="rgb(245,245,245)"
+       
       >
         <Box h="400px" mt={71} display="flex">
           <Box
@@ -161,20 +159,7 @@ export default function Footer() {
           h="70px"
           ml={10}
         >
-          {/* <Box>
-            <Button
-              border="1px"
-              borderColor="gray"
-              fontSize="12px"
-              w="200px"
-              borderRadius="0px"
-            >
-              {" "}
-              Rs.Indian Rupee (INR)
-            </Button>
-
-            <br />
-          </Box> */}
+         
 
           <Box>
           <Button  border="1px"

@@ -13,6 +13,8 @@ import CategoryReviewCurious from "./MainContent/CategoryReviewCurious";
 import UserCards from "./MainContent/UserCards";
 import Home from "./components/Home";
 import OurTop10Finds from "./pages/OurTop10Finds";
+import TeamFavourite from "./pages/TeamFavourite";
+import Dropdown from "./components/Dropdown";
 
 function App() {
   return (
@@ -23,15 +25,17 @@ function App() {
       <Images />
       <CategoryReviewCurious />
       <Footer /> */}
+
        {/* <AllRoutes /> */}
        <Routes>
         <Route path="/" element={<Home />}/>
 
             <Route path="/ourTop10Finds" element={<OurTop10Finds />}/>
+            <Route path="/teamFavourites" element={<TeamFavourite />}/>
+
         </Routes>
-   {/* <Home/> */}
        
-     
+     {/* <Dropdown/> */}
       
     </>
   );

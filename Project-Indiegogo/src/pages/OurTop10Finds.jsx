@@ -115,6 +115,111 @@ let ourTop10Card = [
   },
 ];
 
+// export default function OurTop10Finds() {
+//   return (
+//     <div border="1px" >
+//       <Navbar />
+//       <Box bg="rgb(245,245,245)"  >
+//       <hr style={{ border:"2px solid #E51075" ,width:"10%" ,margin:"auto",}}/>
+      
+//       <Heading mt="30px" textAlign="center" as="h1" 
+               
+//        >
+//         10 Cool & Clever Finds
+//       </Heading>
+//       <Text mt="25px" w="590px" mx="auto">
+//         Discover your next "a-ha" moment in our roundup of standout projects,
+//         from live crowdfunding & InDemand campaigns to innovative products
+//         shiping now.
+//       </Text>
+//       <Flex w="500px" mx="auto" mt="15px" >
+//         <Box bg="#405D9D" p="4" borderRadius="2px" w="160px" h="40px" fontSize="13px" display="flex" justifyContent="space-evenly" alignItems="center">
+         
+//               <Image h="20px" src="https://cdn-icons-png.flaticon.com/128/1240/1240964.png"/>
+//               <Text color="white">SHARE</Text>
+          
+//         </Box>
+//         <Spacer />
+
+//         <Box bg="#2C99D7" p="4" borderRadius="2px" w="160px" h="40px" fontSize="13px" display="flex" justifyContent="space-evenly" alignItems="center">
+//           <Image h="20px" src="https://cdn-icons-png.flaticon.com/128/2504/2504947.png"/>
+//           <Text color="white">TWEET</Text>
+//         </Box>
+//         <Spacer />
+
+//         <Box _hover={{backgroundColor:"#E51075" }} p="4" border="2px" borderColor="#E51075" borderRadius="2px" w="160px" h="40px" fontSize="16px" display="flex" justifyContent="space-evenly" alignItems="center">
+//         <Image h="20px" src="https://cdn-icons-png.flaticon.com/128/4340/4340223.png"/>
+
+//           <Text color="#E51075" _hover={{color:"white" }} >FOLLOW</Text>
+//         </Box>
+//       </Flex>
+
+     
+
+//       <SimpleGrid  
+//       columns={[1, 1, 2]} 
+
+//       //  columns={2} 
+//        spacing={1}
+//         w="90%" mx="auto" 
+//        >
+//         {ourTop10Card.map((data, index) => (
+//           <Box
+//             h="550px"
+//             border="1px"
+//             borderColor="gray.300"
+//             w="580px"
+//             ml="" mt="50"
+//             key={data.id}
+//             position="relative"
+//             style={{
+//               transition: "transform 0.3s ease", 
+//             }}
+//             onMouseEnter={(e) => {
+//               e.currentTarget.style.transform = "translateY(-5px)"; 
+//             }}
+//             onMouseLeave={(e) => {
+//               e.currentTarget.style.transform = "translateY(0)";
+//             }}
+
+//             w={["100%", "100%", "78%","95%"]}
+//           >
+//             <Image h="300px" w="580px" src={data.image} alt="project" />
+//             <Text
+//               fontSize="12px"
+//               color="#088366"
+//               fontWeight="bold"
+//               ml="15px"
+//               mt="20px"
+//             >
+//               {data.funding}
+//             </Text>
+//             <Text
+//               fontSize="18px"
+//               color="#2A2A2A"
+//               fontWeight="bold"
+//               ml="15px"
+//               mt="7px"
+//             >
+//               <Link href={data.link}>{data.title}</Link>
+//             </Text>
+//             <Flex justifyContent="space-between"  w="92%" mx="auto">
+//               <Box display="flex">
+//            <Heading as="h3" size="md" mt="70px">{data.rating}</Heading>
+//            <Text  mt="70px">{data.usdRaised}</Text>
+//            </Box>
+//            <Text  mt="70px">{data.percent}</Text>
+//            </Flex>
+//            <hr style={{width:"90%" , margin:"auto",border:"4px solid #35CA97", borderRadius:"5px",marginTop:"20px"}}/>
+
+//           </Box>
+//         ))}
+//       </SimpleGrid>
+//       </Box>
+//       <Footer />
+//     </div>
+//   );
+// }
 export default function OurTop10Finds() {
   return (
     <div border="1px" >
@@ -122,30 +227,37 @@ export default function OurTop10Finds() {
       <Box bg="rgb(245,245,245)"  >
       <hr style={{ border:"2px solid #E51075" ,width:"10%" ,margin:"auto",}}/>
       
-      <Heading mt="30px" textAlign="center" as="h1"  >
+      <Heading mt="30px" textAlign="center" as="h1" 
+               
+       >
         10 Cool & Clever Finds
       </Heading>
-      <Text mt="25px" w="590px" mx="auto">
+      <Text
+       mt={{ base: "15px", md: "25px" }}
+       w={{ base: "90%", md: "590px" }}
+       mx="auto"
+       fontSize={{ base: "sm", md: "md", lg: "lg" }}
+       >
         Discover your next "a-ha" moment in our roundup of standout projects,
         from live crowdfunding & InDemand campaigns to innovative products
         shiping now.
       </Text>
-      <Flex w="500px" mx="auto" mt="15px">
-        <Box bg="#405D9D" p="4" borderRadius="2px" w="160px" h="40px" fontSize="13px" display="flex" justifyContent="space-evenly" alignItems="center">
+      <Flex w="500px" mx="auto" mt="15px" flexDirection={{ base: "column", md: "row" }} >
+        <Box w={{ base: "100%", md: "160px" }} bg="#405D9D" p="4" borderRadius="2px" w="160px" h="40px" fontSize="13px" display="flex" justifyContent="space-evenly" alignItems="center">
          
               <Image h="20px" src="https://cdn-icons-png.flaticon.com/128/1240/1240964.png"/>
               <Text color="white">SHARE</Text>
           
         </Box>
-        <Spacer />
+        <Spacer mt={{ base: "8px", md: "0" }} />
 
-        <Box bg="#2C99D7" p="4" borderRadius="2px" w="160px" h="40px" fontSize="13px" display="flex" justifyContent="space-evenly" alignItems="center">
+        <Box  w={{ base: "100%", md: "160px" }} bg="#2C99D7" p="4" borderRadius="2px" w="160px" h="40px" fontSize="13px" display="flex" justifyContent="space-evenly" alignItems="center">
           <Image h="20px" src="https://cdn-icons-png.flaticon.com/128/2504/2504947.png"/>
           <Text color="white">TWEET</Text>
         </Box>
-        <Spacer />
+        <Spacer mt={{ base: "8px", md: "0" }}/>
 
-        <Box _hover={{backgroundColor:"#E51075" }} p="4" border="2px" borderColor="#E51075" borderRadius="2px" w="160px" h="40px" fontSize="16px" display="flex" justifyContent="space-evenly" alignItems="center">
+        <Box w={{ base: "100%", md: "160px" }} _hover={{backgroundColor:"#E51075" }} p="4" border="2px" borderColor="#E51075" borderRadius="2px" w="160px" h="40px" fontSize="16px" display="flex" justifyContent="space-evenly" alignItems="center">
         <Image h="20px" src="https://cdn-icons-png.flaticon.com/128/4340/4340223.png"/>
 
           <Text color="#E51075" _hover={{color:"white" }} >FOLLOW</Text>
@@ -154,8 +266,13 @@ export default function OurTop10Finds() {
 
      
 
-      <SimpleGrid columns={2} spacing={1} w="90%" mx="auto" >
-        {/* {cardData.posts.map((data) => ( */}
+      <SimpleGrid  
+      columns={[1, 1, 2]} 
+
+      //  columns={2} 
+       spacing={1}
+        w="90%" mx="auto" 
+       >
         {ourTop10Card.map((data, index) => (
           <Box
             h="550px"
@@ -166,16 +283,16 @@ export default function OurTop10Finds() {
             key={data.id}
             position="relative"
             style={{
-              transition: "transform 0.3s ease", // Add transition effect
+              transition: "transform 0.3s ease", 
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "translateY(-5px)"; // Apply scale transformation on hover
+              e.currentTarget.style.transform = "translateY(-5px)"; 
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "translateY(0)"; // Revert back to normal scale when hover ends
+              e.currentTarget.style.transform = "translateY(0)";
             }}
 
-
+            w={["100%", "100%", "78%","95%"]}
           >
             <Image h="300px" w="580px" src={data.image} alt="project" />
             <Text

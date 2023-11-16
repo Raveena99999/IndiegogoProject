@@ -12,27 +12,40 @@ import {
 export default function Images() {
   return (
     <div>
-      <Flex w="90%" mx="auto"  mt="20px">
-        <Box position="relative" p="4"
-        //  border="1px" 
-         h="420px" w="700px">
+      <Flex w="90%" mx="auto" mt="20px">
+        <Box
+          position="relative"
+          p="4"
+          h="420px"
+          w="700px"
+          // flex="1" p="4" h="420px" maxW="700px" mx="20px" mb="20px"
+        >
           <Image
             w="100%"
             h="100%"
             src="https://media.istockphoto.com/id/1359675618/photo/young-man-sitting-on-a-gray-sofa-caresses-the-head-of-a-brown-tabby-cat.webp?b=1&s=170667a&w=0&k=20&c=SLPzt0_K6B5PAL3pHJ-HqXkC6b1yO1bKK0od7n5m_38="
           />
- <Flex>
-  <Box p='2' ml="-12px" fontWeight="bold" fontSize="15px" mt="0px" h="5px" >
-   <Text>Our roundup of standup projects</Text>
-    
-  </Box>
-  <Spacer />
-  <Box p="2" fontWeight="bold"  fontSize="14px" mt="0px" h="5px">
-    <Link mt="-10px" href="https://www.indiegogo.com/campaign_collections/top-10?i=hmcl">SEE THE COLLECTION ></Link>
-  </Box>
-</Flex>
-
-
+          <Flex>
+            <Box
+              p="2"
+              ml="-12px"
+              fontWeight="bold"
+              fontSize="15px"
+              mt="0px"
+              h="5px"
+            >
+              <Text>Our roundup of standup projects</Text>
+            </Box>
+            <Spacer />
+            <Box p="2" fontWeight="bold" fontSize="14px" mt="0px" h="5px">
+              <Link
+                mt="-10px"
+                href="https://www.indiegogo.com/campaign_collections/top-10?i=hmcl"
+              >
+                SEE THE COLLECTION >
+              </Link>
+            </Box>
+          </Flex>
 
           <Box
             position="absolute"
@@ -47,7 +60,7 @@ export default function Images() {
             _hover={{ textDecoration: "none" }}
           >
             <Link
-              href="https://www.indiegogo.com/campaign_collections/top-10?i=hmcl"
+              href="http://127.0.0.1:5173/ourTop10Finds"
               _hover={{ textDecoration: "none" }}
             >
               10 Cool & Clever Friends
@@ -55,35 +68,42 @@ export default function Images() {
           </Box>
         </Box>
 
-      
-
-
         {/* <Spacer /> */}
-       
 
-
-
-        <Box position="relative" p="4"
-        //  border="1px" 
-         h="420px" w="700px">
+        <Box
+          position="relative"
+          p="4"
+          //  border="1px"
+          h="420px"
+          w="700px"
+        >
           <Image
             w="100%"
             h="100%"
             src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Z3ltJTIwdGFyaW5lcnxlbnwwfHwwfHx8MA%3D%3D"
           />
 
-<Flex>
-  <Box p='2' ml="-12px" fontWeight="bold" fontSize="15px" mt="0px" h="5px" >
-   <Text>Innodigym P1 & more team favourites</Text>
-    
-  </Box>
-  <Spacer />
-  <Box p="2" fontWeight="bold"  fontSize="14px" mt="0px" h="5px">
-    <Link mt="-10px" href="https://www.indiegogo.com/campaign_collections/top-10?i=hmcl">SEE THE COLLECTION ></Link>
-  </Box>
-</Flex>
-
-
+          <Flex>
+            <Box
+              p="2"
+              ml="-12px"
+              fontWeight="bold"
+              fontSize="15px"
+              mt="0px"
+              h="5px"
+            >
+              <Text>Innodigym P1 & more team favourites</Text>
+            </Box>
+            <Spacer />
+            <Box p="2" fontWeight="bold" fontSize="14px" mt="0px" h="5px">
+              <Link
+                mt="-10px"
+                href="https://www.indiegogo.com/campaign_collections/top-10?i=hmcl"
+              >
+                SEE THE COLLECTION >
+              </Link>
+            </Box>
+          </Flex>
 
           <Box
             position="absolute"
@@ -98,7 +118,7 @@ export default function Images() {
             _hover={{ textDecoration: "none" }}
           >
             <Link
-              href="https://www.indiegogo.com/campaign_collections/staff-picks?i=hmcl"
+              href="http://127.0.0.1:5173/teamFavourites"
               _hover={{ textDecoration: "none" }}
             >
               Team Favourites
@@ -107,31 +127,45 @@ export default function Images() {
         </Box>
       </Flex>
 
-
-
-
-
-
-
-      <Flex w="90%" mx="auto"  mt="35px">
-        <Box position="relative" p="4"
-        //  border="1px"
-          h="420px" w="700px">
+      <Flex
+        w="90%"
+        mx="auto"
+        mt="35px"
+        mt={{ sm: "100", base: "100", lg: "7" }}
+        mb={{ sm: "180", base: "180", lg: "0" }}
+      >
+        <Box
+          position="relative"
+          p="4"
+          //  border="1px"
+          h="420px"
+          w="700px"
+        >
           <Image src="https://www.shutterstock.com/image-photo/black-drip-electric-coffee-machine-600nw-2111869688.jpg" />
           <Flex>
-  <Box p='2' ml="-12px" fontWeight="bold" fontSize="15px" mt="0px" h="5px" >
-   <Text>Campaign for the foodie,craft beer afficionado,or coffee lover.</Text>
-    
-  </Box>
-  <Spacer />
-  <Box p="2" fontWeight="bold"  fontSize="14px" mt="0px" h="5px">
-    <Link mt="-10px" href="https://www.indiegogo.com/campaign_collections/top-10?i=hmcl">SEE THE COLLECTION ></Link>
-  </Box>
-</Flex>
-          
-          
-          
-          
+            <Box
+              p="2"
+              ml="-12px"
+              fontWeight="bold"
+              fontSize="15px"
+              mt="0px"
+              h="5px"
+            >
+              <Text>
+                Campaign for the foodie,craft beer afficionado,or coffee lover.
+              </Text>
+            </Box>
+            <Spacer />
+            <Box p="2" fontWeight="bold" fontSize="14px" mt="0px" h="5px">
+              <Link
+                mt="-10px"
+                href="https://www.indiegogo.com/campaign_collections/top-10?i=hmcl"
+              >
+                SEE THE COLLECTION >
+              </Link>
+            </Box>
+          </Flex>
+
           <Box
             position="absolute"
             top="50%"
@@ -154,25 +188,42 @@ export default function Images() {
         </Box>
 
         {/* <Spacer /> */}
-        <Box position="relative" p="4" 
-        // border="1px"
-         h="420px" w="700px">
+        <Box
+          position="relative"
+          p="4"
+          // border="1px"
+          h="420px"
+          w="700px"
+        >
           <Image
             w="100%"
             h="100%"
             src="https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHNlYXxlbnwwfHwwfHx8MA%3D%3D"
           />
-<Flex>
-  <Box p='2' ml="-12px" fontWeight="bold" fontSize="15px" mt="0px" h="5px" >
-   <Text>Discover campaigns in a whole new way.Follow what matters to you.</Text>
-    
-  </Box>
-  <Spacer />
-  <Box p="2" fontWeight="bold"  fontSize="14px" mt="0px" h="5px">
-    <Link mt="-10px" href="https://www.indiegogo.com/campaign_collections/top-10?i=hmcl">SEE THE COLLECTION ></Link>
-  </Box>
-</Flex>
-
+          <Flex>
+            <Box
+              p="2"
+              ml="-12px"
+              fontWeight="bold"
+              fontSize="15px"
+              mt="0px"
+              h="5px"
+            >
+              <Text>
+                Discover campaigns in a whole new way.Follow what matters to
+                you.
+              </Text>
+            </Box>
+            <Spacer />
+            <Box p="2" fontWeight="bold" fontSize="14px" mt="0px" h="5px">
+              <Link
+                mt="-10px"
+                href="https://www.indiegogo.com/campaign_collections/top-10?i=hmcl"
+              >
+                SEE THE COLLECTION >
+              </Link>
+            </Box>
+          </Flex>
 
           <Box
             position="absolute"
@@ -196,24 +247,27 @@ export default function Images() {
         </Box>
       </Flex>
 
-      <Flex w="1220px" h="350px" mx="auto" bg="gray.50"
-      //  border="1px"
-        mt="70px">
-        <Box w="300px"
-        //  border="1px" borderColor="black"
-         >
+      <Flex
+        w="1220px"
+        h="350px"
+        mx="auto"
+        bg="gray.50"
+        mt="70px"
+       
+      >
+        <Box
+         w="300px"
+      
+        >
           <Image
             w="100%"
             h="100%"
             src="data:image/jpeg;base64,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"
           ></Image>
         </Box>
-        {/* <Spacer /> */}
 
-        <Box w="800px"
-        //  border="1px" borderColor="black" 
-         mt="50px">
-          <Text fontSize="32px" textAlign="center">
+        <Box w="800px">
+          <Text fontSize="32px" textAlign="center" mt="50px">
             Back the project, take the ride
           </Text>
           <Container w="900px">
@@ -232,14 +286,11 @@ export default function Images() {
             _hover={{ color: "#E51075", textDecoration: "none" }}
             href="https://www.indiegogo.com/about/what-we-do"
           >
-            LEARN ABOUT CROWDFUNDING >
+            LEARN ABOUT CROWDFUNDING
           </Link>
         </Box>
-        {/* <Spacer /> */}
 
-        <Box w="300px"
-        //  border="1px" borderColor="black"
-         >
+        <Box w="300px">
           <Image
             h="100%"
             w="100%"

@@ -41,7 +41,7 @@ export default function Explore() {
         finalFocusRef={btnRef}
       >
         <DrawerOverlay />
-        <DrawerContent h="550px">
+        <DrawerContent h="550px" >
           <DrawerCloseButton />
           <DrawerHeader mt="20px">
             <Flex w="80%" mx="auto">

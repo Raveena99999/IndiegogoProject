@@ -5,9 +5,9 @@ export const SignupContext = createContext();
 
 export default function SignupContextProvider({children}) {
     
-  const { isOpenSignup, onOpenSignup, onCloseSignup } = useDisclosure();
-  const initialRefSignup = React.useRef(null);
-  const finalRefSignup = React.useRef(null);
+  const { isOpen:isOpenSignup, onOpen: onOpenSignup,onClose: onCloseSignup } = useDisclosure();
+  const initialRefSignup = useRef(null);
+  const finalRefSignup = useRef(null);
   return (
     <SignupContext.Provider value={{isOpenSignup, onOpenSignup, onCloseSignup, initialRefSignup,finalRefSignup }}>
         {children}

@@ -1,4 +1,5 @@
-import React, { useContext } from "react";
+import React, { useContext,useState } from "react";
+
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -22,10 +23,31 @@ import {
   Checkbox,
 } from "@chakra-ui/react";
 import { SignupContext } from "../context/SignupContextProvider";
-export default function Signup() {
+ function Signup() {
   const { isOpenSignup, onOpenSignup, onCloseSignup, initialRefSignup,finalRefSignup } =
     useContext(SignupContext);
-   console.log("on",onOpenSignup)
+    const [formData, setFormData] = useState({
+      firstName: '',
+      lastName: '',
+      email: '',
+      password: '',
+      newsletter: false,
+      termsAgreed: false
+    });
+ 
+    const handleChange = (e) => {
+      const { name, value, type, checked } = e.target;
+      const newValue = type === 'checkbox' ? checked : value;
+  
+      setFormData({ ...formData, [name]: newValue });
+    };
+  
+    const handleSubmit = (event) => {
+      event.preventDefault();
+      localStorage.setItem("myobject", JSON.stringify(formData));
+      console.log("submit");
+    };
+  
 
   return (
     <div>
@@ -47,6 +69,7 @@ export default function Signup() {
           >
             <ModalOverlay />
             <ModalContent h="800px">
+            <form onSubmit={handleSubmit}>
               <ModalHeader fontSize="36px" textAlign="center">
                 Welcome!
               </ModalHeader>
@@ -61,24 +84,26 @@ export default function Signup() {
                   Sign up to join Indiegogo.
                 </Text>
 
-                <FormControl>
+                <FormControl onSubmit={handleSubmit}>
+                  
                   <FormLabel>First Name</FormLabel>
-                  <Input ref={initialRefSignup} placeholder="Your First Name" />
+                  <Input onChange={handleChange} name="firstName" value={formData.firstName}  ref={initialRefSignup} placeholder="Your First Name" />
+
                 </FormControl>
 
                 <FormControl>
                   <FormLabel>Last Name</FormLabel>
-                  <Input  placeholder="Your Last Name" />
+                  <Input onChange={handleChange}  name="lastName" value={formData.lastName}  placeholder="Your Last Name" />
                 </FormControl>
 
                 <FormControl>
                   <FormLabel>Email</FormLabel>
-                  <Input  placeholder="Your Email" />
+                  <Input onChange={handleChange} name="email" value={formData.email}  placeholder="Your Email" />
                 </FormControl>
 
                 <FormControl mt={4}>
                   <FormLabel>Password</FormLabel>
-                  <Input placeholder="Password" />
+                  <Input onChange={handleChange} name="password" value={formData.password}  placeholder="Password" />
                 </FormControl>
 
                 <Checkbox
@@ -116,8 +141,8 @@ export default function Signup() {
               </ModalBody>
 
               <ModalFooter>
-                <Button colorScheme="pink" mr={3} w="100%">
-                  LOG IN
+                <Button type="submit" value="submit" colorScheme="pink" mr={3} w="100%">
+                  CREATE ACCOUNT
                 </Button>
               </ModalFooter>
               <Text textAlign="center">OR</Text>
@@ -155,6 +180,7 @@ export default function Signup() {
                   </Text>
                 </Box>
               </ModalFooter>
+              </form>
             </ModalContent>
           </Modal>
         </BreadcrumbItem>
@@ -162,3 +188,4 @@ export default function Signup() {
     </div>
   );
 }
+export default Signup
