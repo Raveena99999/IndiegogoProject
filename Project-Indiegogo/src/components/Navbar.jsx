@@ -1,6 +1,6 @@
 
 
-import React from "react";
+import React,{useEffect, useState} from "react";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -15,12 +15,16 @@ import Explore from "../pages/Explore";
 import Dropdown from "./Dropdown";
 
 export default function Navbar() {
+  const[logout,setLogout]=useState(false)
+
   const handleClick =()=>{
     window.location.href="/"
   }
-  let newObj=localStorage.getItem("myobject")
-  let finalObj=JSON.parse(newObj)
-  // console.log(newObj,"navbar")
+
+  let finalObj=JSON.parse(localStorage.getItem("myobject"))||[]
+
+
+  
  console.log("firstname",finalObj.firstName)
 
   const openDropdown = () => {
@@ -31,6 +35,11 @@ export default function Navbar() {
   const dropdownRef = React.useRef();
 
 
+const handleLogout=()=>{
+    localStorage.removeItem("myobject")
+    setLogout(true)
+    console.log("out")
+}
 
 
   return (
@@ -142,7 +151,7 @@ export default function Navbar() {
 
           {finalObj.firstName ? ( 
             <BreadcrumbItem color="#2A2A2A" fontWeight="bold" >
-              <h1>{}</h1>
+              {/* <h1>{}</h1> */}
             </BreadcrumbItem>
           ) : (
            
@@ -153,7 +162,7 @@ export default function Navbar() {
 
           {finalObj.firstName ? ( 
           
-            <Dropdown ref={dropdownRef} firstName={finalObj.firstName} />
+            <Dropdown  ref={dropdownRef} firstName={finalObj.firstName} handleLogout={handleLogout}/>
 
           ) : (
            

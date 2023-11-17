@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDisclosure } from "@chakra-ui/react";
 import {
   Drawer,
@@ -14,14 +14,10 @@ import {
   VStack 
 } from "@chakra-ui/react";
 
-export default function Dropdown({firstName}) {
+export default function Dropdown({firstName,handleLogout}) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
 
-const handleLogout=()=>{
-    localStorage.removeItem("myobject")
-    console.log("out")
-}
 
 
 
