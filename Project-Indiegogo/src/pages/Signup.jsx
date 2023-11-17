@@ -1,3 +1,5 @@
+
+
 import React, { useContext,useState } from "react";
 
 import {
@@ -34,7 +36,7 @@ import { SignupContext } from "../context/SignupContextProvider";
       newsletter: false,
       termsAgreed: false
     });
- 
+ const[data,setdata]=useState([])
     const handleChange = (e) => {
       const { name, value, type, checked } = e.target;
       const newValue = type === 'checkbox' ? checked : value;
@@ -44,8 +46,11 @@ import { SignupContext } from "../context/SignupContextProvider";
   
     const handleSubmit = (event) => {
       event.preventDefault();
-      localStorage.setItem("myobject", JSON.stringify(formData));
+setdata([...data,formData])
+      localStorage.setItem("myobject", JSON.stringify(data));
       console.log("submit");
+      console.log(data,'data')
+      // window.location.href="/teamFavourites"
     };
   
 
@@ -87,23 +92,23 @@ import { SignupContext } from "../context/SignupContextProvider";
                 <FormControl onSubmit={handleSubmit}>
                   
                   <FormLabel>First Name</FormLabel>
-                  <Input onChange={handleChange} name="firstName" value={formData.firstName}  ref={initialRefSignup} placeholder="Your First Name" />
+                  <Input type="text" onChange={handleChange} name="firstName" value={formData.firstName}  ref={initialRefSignup} placeholder="Your First Name" />
 
                 </FormControl>
 
                 <FormControl>
                   <FormLabel>Last Name</FormLabel>
-                  <Input onChange={handleChange}  name="lastName" value={formData.lastName}  placeholder="Your Last Name" />
+                  <Input type="text" onChange={handleChange}  name="lastName" value={formData.lastName}  placeholder="Your Last Name" />
                 </FormControl>
 
                 <FormControl>
                   <FormLabel>Email</FormLabel>
-                  <Input onChange={handleChange} name="email" value={formData.email}  placeholder="Your Email" />
+                  <Input type="email" onChange={handleChange} name="email" value={formData.email}  placeholder="Your Email" />
                 </FormControl>
 
                 <FormControl mt={4}>
                   <FormLabel>Password</FormLabel>
-                  <Input onChange={handleChange} name="password" value={formData.password}  placeholder="Password" />
+                  <Input type="password" onChange={handleChange} name="password" value={formData.password}  placeholder="Password" />
                 </FormControl>
 
                 <Checkbox

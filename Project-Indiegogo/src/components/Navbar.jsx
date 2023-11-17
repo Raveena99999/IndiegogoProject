@@ -15,17 +15,26 @@ import Explore from "../pages/Explore";
 import Dropdown from "./Dropdown";
 import Search from "../pages/Search";
 
+
 export default function Navbar() {
   const[logout,setLogout]=useState(false)
+  const [firstname, setFirstname] = useState('');
+
   const handleClick =()=>{
     window.location.href="/"
   }
 
-  let finalObj=JSON.parse(localStorage.getItem("myobject"))||[]
 
+
+
+  useEffect(() => {
+    const finalObj = JSON.parse(localStorage.getItem("myobject"));
+    if (finalObj && finalObj.length >0) {
+      setFirstname(finalObj[finalObj.length - 1].firstName);
+    }
+  }, []);
 
   
- console.log("firstname",finalObj.firstName)
 
   const openDropdown = () => {
     if (dropdownRef && dropdownRef.current) {
@@ -36,11 +45,11 @@ export default function Navbar() {
 
 
 const handleLogout=()=>{
-    localStorage.removeItem("myobject")
+
     setLogout(true)
+    setFirstname('')
     console.log("out")
 }
-
 
 
   return (
@@ -58,7 +67,6 @@ const handleLogout=()=>{
       <Box
         ml={5}
         h="65px"
-        // w="600px"
         w={{ base: "100%", md: "600px" }}
 
         display="flex"
@@ -91,7 +99,6 @@ const handleLogout=()=>{
               Our Top 10 Finds
             </BreadcrumbLink>
           </BreadcrumbItem>
-          {/* <Link to="/ourTop10Finds">our top 10finds</Link> */}
           <BreadcrumbItem color="#2A2A2A" fontWeight="bold">
             <BreadcrumbLink
               href="/teamFavourites"
@@ -101,24 +108,12 @@ const handleLogout=()=>{
             </BreadcrumbLink>
           </BreadcrumbItem>
 <Search/>
-          {/* <BreadcrumbItem>
-            <BreadcrumbLink
-              href=""
-              _hover={{ color: "#E51075", textDecoration: "none" }}
-            >
-              <img
-                style={{ height: "50px" }}
-                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHkAAAB5CAMAAAAqJH57AAAAaVBMVEX///8hJikAAAAeIyYVGx/j4+QAAAYNFRkABw0bISQiJyj8/P1JTU0AAAPX19gSGRy0t7hER0nv8PFzdXacnp719vaChYbp6emtra4ADRLLzc6QkpK7vb0wMzR9f4BQU1U3OjxdYWNoa2sl9QWsAAACZUlEQVRoge2Y3ZaqMAyFSQqUUqUgKBZQxPd/yElH1/lx6JyLMaxzkW/u2llrk90mTUwSQRAEQRAEQRAEQRAEQRBi2Gw4j2M3ZcdtdftupzH32uP+cq3oOzbSPV6xMPDEOJyrjYRrdADK4SeaPsFgu0nQI5KuL9u6yvpqGpuctHVz4Bc+5SR06X4p2WkuANyNXbqjiPO2/3PJds6AnpkNnyg+HJOX2zwpBfnIKny4GeVPX9cHBIUDp3KXQ7pb3UBIF8tn+LFU4LPVrZ0BZExrOmW94nWA/NZXPuXWga4ipfKiFGNmlcbs1l8Im5w0eDa7j985SidR1FzKGZZFF9usPMQ3f8qAJUbD6slttmJSYbk/f6fMFjO5HQ9r4HTbUqFqY5s13bCJSzm5GdPE+i7Kdbde3t4B5WweeResU7Fcfwd0lm5Z3zrvw9XmezIaA8Vq0JZeaEazbTIhGFjztNWgbqwt6KIhnb8uhx4JjB4ZO++spJZreX2TRk/tKEDpG84n2ivqcf9K3IyMUGlovCF1Hd8lO5O00ffhedo2Gw01/kU73HQYOYqFK2y6ZXlK/TVerl1dn087pC9RBXUqx7Z4hB0t7T+mb5AkVOpzLFwQ8+bh/lT6EDYu1I4zdYNTQ/OUegx0KZrn2dow6oXVFDu+Sz6cZggDnWva6fjU/VwvdUl+7Ge+qpLYQ1bRTPdaVg7XMOGBM+etZurfTJeQ3crfGcOO0LdFOG0NfJc8yhRSHFS+bPsjiqW/w0KFvFwfwbipU61c/+//ezsU9j3eIbMqU04N2+eVIAiCIAiCIAiCIAiCIPzvfAA67htnKF4m8wAAAABJRU5ErkJggg=="
-                alt=""
-              />
-            </BreadcrumbLink>
-          </BreadcrumbItem> */}
+        
         </Breadcrumb>
       </Box>
 
       <Box
-        // h="65px"
-        // w="420px"
+       
         h="auto"
         w={{ base: "100%", md: "420px" }}
 
@@ -148,29 +143,28 @@ const handleLogout=()=>{
               What We Do
             </BreadcrumbLink>
           </BreadcrumbItem>
-          {/* <Login/> */}
 
-          {finalObj.firstName ? ( 
+          
+          {firstname ? ( 
             <BreadcrumbItem color="#2A2A2A" fontWeight="bold" >
-              {/* <h1>{}</h1> */}
+            
             </BreadcrumbItem>
           ) : (
            
             <Login />
-          )}
+          )} 
 
 
-
-          {finalObj.firstName ? ( 
+          {firstname ? ( 
           
-            <Dropdown  ref={dropdownRef} firstName={finalObj.firstName} handleLogout={handleLogout}/>
+            <Dropdown  ref={dropdownRef} firstName={firstname} handleLogout={handleLogout}/>
 
           ) : (
            
-            <Signup />
-          )}
+            <Signup  />
+          )} 
 
-          {/* <Signup/> */}
+      
         </Breadcrumb>
 
 
@@ -183,3 +177,4 @@ const handleLogout=()=>{
     </Box>
   );
 }
+

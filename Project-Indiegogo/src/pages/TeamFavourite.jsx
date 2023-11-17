@@ -46,7 +46,6 @@ let cardData = {
       link: "https://www.indiegogo.com/projects/the-lie-behind-the-star-graphic-novel/hmco)",
       description: "Cosmic adventure. cosmic horror!",
       category: "COMICS",
-      // link:"",
       rating: "$101,377 ",
       usdRaised: "USD raised",
       percent: "107%",
@@ -251,10 +250,10 @@ let cardData = {
 };
 
 export default function TeamFavourite() {
-  const [displayCount, setDisplayCount] = useState(8); // Initial count of cards displayed
+  const [displayCount, setDisplayCount] = useState(8);
 
   const handleSeeMore = () => {
-    setDisplayCount(displayCount + 4); // Increase the count to display more cards
+    setDisplayCount(displayCount + 4);
   };
   return (
     <div>
@@ -262,7 +261,6 @@ export default function TeamFavourite() {
       <Box position="relative">
         <Image
           w="100%"
-          // h="350px"
           h={["250px", "300px", "350px"]}
           src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Z3ltJTIwdGFyaW5lcnxlbnwwfHwwfHx8MA%3D%3D"
         />
@@ -275,7 +273,6 @@ export default function TeamFavourite() {
           color="white"
         >
           <Text
-            // fontSize="48px"
             fontSize={["32px", "36px", "48px"]}
             fontWeight="bold"
           >
@@ -310,13 +307,13 @@ export default function TeamFavourite() {
             key={data.id}
             position="relative"
             style={{
-              transition: "transform 0.3s ease", // Add transition effect
+              transition: "transform 0.3s ease",
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "translateY(-5px)"; // Apply scale transformation on hover
+              e.currentTarget.style.transform = "translateY(-5px)";
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "translateY(0)"; // Revert back to normal scale when hover ends
+              e.currentTarget.style.transform = "translateY(0)";
             }}
           >
             <Image h="270px" w="300px" src={data.image} alt="project" />

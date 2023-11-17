@@ -228,7 +228,6 @@ export default function Explore() {
                     <br />
                   </Box>
                   <Box mt="85px">
-                    {/* <Link color="">abcde</Link> */}
                     <Link href="">Podcasts.Blogs & Vlogs</Link>
                     <br />
                     <Link href="">Tabletop Games</Link>

@@ -196,14 +196,7 @@ export default function Footer() {
           w="450px"
           h="70px"
           ml={10}
-        //            display="flex"
-        // alignItems="center"
-        // justifyContent="space-between"
-        // w={{ base: "100%", md: "450px" }}
-        // h="70px"
-        // mt={{ base: 4, md: 400,lg:50 }}
-        // flexWrap={{ base: "wrap", md: "nowrap" }}
-        // ml={{lg:20}}
+     
         >
          
 
@@ -257,14 +250,7 @@ export default function Footer() {
             justifyContent="space-between"
          
             w="190px"
-        //      display="flex"
-        // alignItems="center"
-        // justifyContent="space-between"
-        // w={{ base: "100%", md: "450px" }}
-        // h="70px"
-        // ml={10}
-        // mt={{ base: 4, md: -1,lg:1 }}
-        // flexWrap={{ base: "wrap", md: "nowrap" }}
+      
           >
              <Box
           display="flex"
@@ -329,12 +315,7 @@ export default function Footer() {
           display="flex"
           justifyContent="space-between"
           mx="auto"
-        //     w={{ base: "100%", md: "950px" }}
-        // mt="20px"
-        // display="flex"
-        // justifyContent="space-between"
-        // mx="auto"
-        // flexWrap={{ base: "wrap", md: "nowrap" }}
+       
         >
           <Link fontSize="13px" href="https://www.indiegogo.com/about/terms">
             {" "}

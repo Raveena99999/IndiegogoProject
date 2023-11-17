@@ -12,16 +12,8 @@ import {
 export default function Images() {
   return (
     <div>
-      <Flex w="90%" mx="auto" mt="20px" >
-     
-       
-        <Box
-          position="relative"
-          p="4"
-          h="420px"
-          w="700px"
-          // flex="1" p="4" h="420px" maxW="700px" mx="20px" mb="20px"
-        >
+      <Flex w="90%" mx="auto" mt="20px">
+        <Box position="relative" p="4" h="420px" w="700px">
           <Image
             w="100%"
             h="100%"
@@ -70,15 +62,7 @@ export default function Images() {
           </Box>
         </Box>
 
-        {/* <Spacer /> */}
-
-        <Box
-          position="relative"
-          p="4"
-          //  border="1px"
-          h="420px"
-          w="700px"
-        >
+        <Box position="relative" p="4" h="420px" w="700px">
           <Image
             w="100%"
             h="100%"
@@ -136,13 +120,7 @@ export default function Images() {
         mt={{ sm: "100", base: "100", lg: "7" }}
         mb={{ sm: "180", base: "180", lg: "0" }}
       >
-        <Box
-          position="relative"
-          p="4"
-          //  border="1px"
-          h="420px"
-          w="700px"
-        >
+        <Box position="relative" p="4" h="420px" w="700px">
           <Image src="https://www.shutterstock.com/image-photo/black-drip-electric-coffee-machine-600nw-2111869688.jpg" />
           <Flex>
             <Box
@@ -189,14 +167,7 @@ export default function Images() {
           </Box>
         </Box>
 
-        {/* <Spacer /> */}
-        <Box
-          position="relative"
-          p="4"
-          // border="1px"
-          h="420px"
-          w="700px"
-        >
+        <Box position="relative" p="4" h="420px" w="700px">
           <Image
             w="100%"
             h="100%"
@@ -246,40 +217,39 @@ export default function Images() {
               Other Collections
             </Link>
           </Box>
-          
         </Box>
-        
       </Flex>
 
-
-      {/* <Flex
-        w="1220px"
-        h="350px"
+      <Flex
+        maxW="1220px"
+        w="100%"
         mx="auto"
         bg="gray.50"
         mt="70px"
-       
+        flexDirection={{ base: "column", md: "row" }}
       >
-        <Box
-         w="300px"
-      
-        >
+        <Box w={{ base: "100%", md: "300px" }}>
           <Image
             w="100%"
-            h="100%"
+            h="350px"
             src="https://media.istockphoto.com/id/1708238793/photo/woman-video-call-and-psychologist-on-laptop-screen-of-support-advice-or-helping-with-mental.jpg?s=612x612&w=0&k=20&c=QwAruG7de_gkmcXITeD0m7a2UUOZWzqLK7PuAqS2ep8="
-          ></Image>
+            alt="Image 1"
+          />
         </Box>
 
-        <Box w="800px">
-          <Text fontSize="32px" textAlign="center" mt="50px">
+        <Box w={{ base: "100%", md: "800px" }}>
+          <Text
+            fontSize="32px"
+            textAlign="center"
+            mt={{ base: "20px", md: "50px", lg: "70px" }}
+          >
             Back the project, take the ride
           </Text>
-          <Container w="900px">
-            <Text mt="20px">
-              Indiegogo is your destination for clever innovation in tech
-              ,design and more,often with special perks and pricing for early
-              adopaters.Back a compaign, share your ideas and feedback with the
+          <Container maxW="900px" mx="auto" mt="20px">
+            <Text>
+              Indiegogo is your destination for clever innovation in tech,
+              design, and more, often with special perks and pricing for early
+              adopters. Back a campaign, share your ideas and feedback with the
               project team - and join the risks and rewards of bringing new
               products to life.
             </Text>
@@ -295,64 +265,15 @@ export default function Images() {
           </Link>
         </Box>
 
-        <Box w="300px">
+        <Box w={{ base: "100%", md: "300px" }}>
           <Image
-            h="100%"
+            h="350px"
             w="100%"
             src="https://media.istockphoto.com/id/1298306995/photo/young-woman-riding-bicycle-on-white-sand-island.jpg?s=612x612&w=0&k=20&c=IE2cSBjj8Di7FdOTvOfhXO17rX3FSoiOf3sbTQvWJMQ="
-          ></Image>
+            alt="Image 2"
+          />
         </Box>
-      </Flex> */}
-
-
-<Flex
-      maxW="1220px"
-      w="100%"
-      mx="auto"
-      bg="gray.50"
-      mt="70px"
-      flexDirection={{ base: 'column', md: 'row' }}
-    >
-      <Box w={{ base: '100%', md: '300px' }}>
-        <Image
-          w="100%"
-          h="350px"
-          src="https://media.istockphoto.com/id/1708238793/photo/woman-video-call-and-psychologist-on-laptop-screen-of-support-advice-or-helping-with-mental.jpg?s=612x612&w=0&k=20&c=QwAruG7de_gkmcXITeD0m7a2UUOZWzqLK7PuAqS2ep8="
-          alt="Image 1"
-        />
-      </Box>
-
-      <Box w={{ base: '100%', md: '800px' }}>
-        <Text fontSize="32px" textAlign="center" mt={{ base: '20px', md: '50px', lg:"70px" }}>
-          Back the project, take the ride
-        </Text>
-        <Container maxW="900px" mx="auto" mt="20px">
-          <Text>
-            Indiegogo is your destination for clever innovation in tech, design, and more, often with special perks and
-            pricing for early adopters. Back a campaign, share your ideas and feedback with the project team - and join
-            the risks and rewards of bringing new products to life.
-          </Text>
-        </Container>
-        <Link
-          display="block"
-          textAlign="center"
-          mt="25px"
-          _hover={{ color: '#E51075', textDecoration: 'none' }}
-          href="https://www.indiegogo.com/about/what-we-do"
-        >
-          LEARN ABOUT CROWDFUNDING
-        </Link>
-      </Box>
-
-      <Box w={{ base: '100%', md: '300px' }}>
-        <Image
-          h="350px"
-          w="100%"
-          src="https://media.istockphoto.com/id/1298306995/photo/young-woman-riding-bicycle-on-white-sand-island.jpg?s=612x612&w=0&k=20&c=IE2cSBjj8Di7FdOTvOfhXO17rX3FSoiOf3sbTQvWJMQ="
-          alt="Image 2"
-        />
-      </Box>
-    </Flex>
+      </Flex>
     </div>
   );
 }

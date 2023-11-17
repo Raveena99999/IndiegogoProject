@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -28,6 +28,27 @@ import { LoginContext } from "../context/LoginContextProvider";
   const {  isOpenLogin, onOpenLogin, onCloseLogin,initialRefLogin,finalRefLogin} =
     useContext(LoginContext);
     console.log("hy", onOpenLogin)
+
+    const [email,setEmail]=useState("")
+    const [password,setPassword]=useState("")
+    const [colr,setColr]=useState("white")
+    const handleEmailChange =(e)=>{
+   setEmail(e.target.value)
+   if(email.includes("@gmail.com")){
+     setColr("white")
+   }
+   else{
+    setColr("red")
+   }
+    }
+    const handleLogin=()=>{
+ 
+      if (email==="" || password==""){
+        alert('Please fill all fields')
+      }
+      console.log(email,"email")
+    }
+
   return (
     <>
       <Breadcrumb>
@@ -60,15 +81,17 @@ import { LoginContext } from "../context/LoginContextProvider";
                 >
                   Log in to continue.
                 </Text>
-
+             
                 <FormControl>
                   <FormLabel>Email</FormLabel>
-                  <Input ref={initialRefLogin} placeholder="Your Email" />
-                </FormControl>
+                  <Input includes="@gmail.com" type="email" onChange={handleEmailChange} name="email" ref={initialRefLogin} placeholder="Your Email" />
+                  {colr === "red" || (
+    <h2 style={{ color: colr }}>Please enter a valid email id</h2>
+  )}                </FormControl>
 
                 <FormControl mt={4}>
                   <FormLabel>Password</FormLabel>
-                  <Input placeholder="Password" />
+                  <Input type="password" onChange={(e)=>setPassword(e.target.value)} name="password" placeholder="Password" />
                 </FormControl>
                 <Link
                   href="https://www.indiegogo.com/accounts/password/new"
@@ -82,7 +105,7 @@ import { LoginContext } from "../context/LoginContextProvider";
               </ModalBody>
 
               <ModalFooter>
-                <Button colorScheme="pink" mr={3} w="100%">
+                <Button onClick={handleLogin} colorScheme="pink" mr={3} w="100%">
                   LOG IN
                 </Button>
               </ModalFooter>
