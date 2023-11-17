@@ -15,18 +15,12 @@ import Home from "./components/Home";
 import OurTop10Finds from "./pages/OurTop10Finds";
 import TeamFavourite from "./pages/TeamFavourite";
 import Dropdown from "./components/Dropdown";
+import Search from "./pages/Search.jsx";
 
 function App() {
   return (
     <>
-      {/* <Navbar />
-      <Slider />
-      <UserCards />
-      <Images />
-      <CategoryReviewCurious />
-      <Footer /> */}
-
-       {/* <AllRoutes /> */}
+     
        <Routes>
         <Route path="/" element={<Home />}/>
 
@@ -34,8 +28,8 @@ function App() {
             <Route path="/teamFavourites" element={<TeamFavourite />}/>
 
         </Routes>
+        {/* <Search/> */}
        
-     {/* <Dropdown/> */}
       
     </>
   );

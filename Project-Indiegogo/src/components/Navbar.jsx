@@ -13,10 +13,10 @@ import Login from "../pages/Login";
 import Signup from "../pages/Signup";
 import Explore from "../pages/Explore";
 import Dropdown from "./Dropdown";
+import Search from "../pages/Search";
 
 export default function Navbar() {
   const[logout,setLogout]=useState(false)
-
   const handleClick =()=>{
     window.location.href="/"
   }
@@ -40,6 +40,7 @@ const handleLogout=()=>{
     setLogout(true)
     console.log("out")
 }
+
 
 
   return (
@@ -99,8 +100,8 @@ const handleLogout=()=>{
               Team Favourites
             </BreadcrumbLink>
           </BreadcrumbItem>
-
-          <BreadcrumbItem>
+<Search/>
+          {/* <BreadcrumbItem>
             <BreadcrumbLink
               href=""
               _hover={{ color: "#E51075", textDecoration: "none" }}
@@ -111,7 +112,7 @@ const handleLogout=()=>{
                 alt=""
               />
             </BreadcrumbLink>
-          </BreadcrumbItem>
+          </BreadcrumbItem> */}
         </Breadcrumb>
       </Box>
 

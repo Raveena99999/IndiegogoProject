@@ -39,10 +39,10 @@ export default function Dropdown({firstName,handleLogout}) {
 
           <DrawerBody>
             <VStack spacing={4} align="start"> {/* Use VStack for vertical stacking */}
-              <Link>My Campaigns</Link>
-              <Link>My Contribution</Link>
-              <Link>Profile</Link>
-              <Link>Settings</Link>
+              <Link href="https://www.indiegogo.com/individuals/35910937/campaigns">My Campaigns</Link>
+              <Link href="https://www.indiegogo.com/individuals/35910937/contributions"> My Contribution</Link>
+              <Link href="https://www.indiegogo.com/individuals/35910937">Profile</Link>
+              <Link href="https://www.indiegogo.com/individuals/35910937/edit#/settings">Settings</Link>
               <Link onClick={handleLogout}>Log Out</Link>
             </VStack>
           </DrawerBody>
