@@ -180,7 +180,7 @@ export default function CategoryReviewCurious({}) {
 
 
 
-
+{/* 
 
 <Text fontSize="34px" textAlign="center" mt="35px">From the Indiegogo Review</Text>
 <Text fontSize="18px" textAlign="center" mt="15px">Your behind-the-scenes view of the people and stories behind Indiegogo projects
@@ -188,7 +188,6 @@ export default function CategoryReviewCurious({}) {
 
 <Flex mx="auto" w="92%"  mt="50px">
   <Box p='4'
-//    border="1px"
     w="420px" h="250px">
   <Image w="100%" h="100%" src="https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/f_auto/v1698949706/mn1lljslimy4bdpxpul9.png"/>
   <Text mt="20px">Indiegogo's New Gifting Feature</Text>
@@ -197,7 +196,6 @@ export default function CategoryReviewCurious({}) {
   </Box>
 
   <Box p='4' 
-//   border="1px"
    w="420px" h="250px">
   <Image w="100%" h="100%" src="https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/f_auto/v1698949396/b6ytq9ga3t0plplvxem0.png"/>
   <Text mt="20px">We Review the Most High End Gaming Handheld</Text>
@@ -220,9 +218,55 @@ export default function CategoryReviewCurious({}) {
   </Box>
   
   
-</Flex>
+</Flex> */}
+
+<Flex direction="column" alignItems="center" mt={{ base: "35px", md: "70px" ,lg:"10px"}}>
+      <Text fontSize="34px" textAlign="center" mt="35px">
+        From the Indiegogo Review
+      </Text>
+      <Text fontSize="18px" textAlign="center" mt="15px">
+        Your behind-the-scenes view of the people and stories behind Indiegogo projects
+      </Text>
+
+      <Flex
+        mx="auto"
+        w="92%"
+        maxW="1200px"
+        mt="50px"
+        justifyContent="center"
+        gap="20px"
+        flexWrap={{ base: "wrap", md: "nowrap" }}
+        overflowX={{ base: "auto", md: "visible" }}
+      >
+        {/* Box 1 */}
+        <Box p='4' w={{ base: "100%", md: "420px" }} h="250px">
+          <Image w="100%" h="100%" src="https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/f_auto/v1698949706/mn1lljslimy4bdpxpul9.png" />
+          <Text mt="20px">Indiegogo's New Gifting Feature</Text>
+          <Text mt="8px" color="#6A6A6A">Now you can give the gift of crowdfunding.</Text>
+          <Link fontSize="14px" mt="16px" display="block" _hover={{ color: "#E51075", textDecoration: "none" }} href="https://go.indiegogo.com/blog/2023/10/indiegogo-redefines-crowdfunding-support-with-new-gifting-feature.html?utm_source=banner&utm_medium=wordpress&utm_campaign=from-the-journal&r=ban-wor-from-the">LEARN MORE ></Link>
+        </Box>
+
+        {/* Box 2 */}
+        <Box p='4' w={{ base: "100%", md: "420px" }} h="250px">
+          <Image w="100%" h="100%" src="https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/f_auto/v1698949396/b6ytq9ga3t0plplvxem0.png" />
+          <Text mt="20px">We Review the Most High End Gaming Handheld</Text>
+          <Text mt="8px" color="#6A6A6A">Does the AYANEO KUN live up to the hype?</Text>
+          <Link fontSize="14px" mt="16px" display="block" _hover={{ color: "#E51075", textDecoration: "none" }} href="https://go.indiegogo.com/blog/2023/11/the-art-of-gaming-ayaneo-kun-delivers-the-best-visual-experience-for-gamers.html?utm_source=banner&utm_medium=wordpress&utm_campaign=from-the-journal&r=ban-wor-from-the">LEARN MORE ></Link>
+        </Box>
+
+        {/* Box 3 */}
+        <Box p='4' w={{ base: "100%", md: "420px" }} h="250px">
+          <Image w="100%" h="100%" src="https://c1.iggcdn.com/indiegogo-media-prod-cld/image/upload/f_auto/v1698949291/s3soqvhp3dykhh1gtism.png" />
+          <Text mt="20px">We Tried the Best Android Gaming Handheld</Text>
+          <Text mt="8px" color="#6A6A6A">Putting the new AYANEO Pocket Air to the test!</Text>
+          <Link fontSize="14px" mt="16px" display="block" _hover={{ color: "#E51075", textDecoration: "none" }} href="https://go.indiegogo.com/blog/2023/10/ayaneo-pocket-air-retro-edition-a-nostalgic-gamers-dream-come-to-life.html">LEARN MORE ></Link>
+        </Box>
+      </Flex>
+    </Flex>
 
 
+
+{/* 
 <Text fontSize="34px" textAlign="center" mt="145px">Clever Things For Curious Humans™</Text>
 <Text fontSize="18px" textAlign="center" mt="15px" w="1000px" mx="auto">There’s no better place to start the hunt for something new and special. Begin on Indiegogo to find clever and unconventional things that solve everyday problems large and small.
 
@@ -248,8 +292,43 @@ export default function CategoryReviewCurious({}) {
         >
           <a href="https://www.indiegogo.com/about/what-we-do"> LEARN NOW</a>
         </Button>
+      </Box> */}
+  <Text fontSize="34px" textAlign="center" mt={{ base: "145px", md: "150px",lg:"150px" }}>
+        Clever Things For Curious Humans™
+      </Text>
+      <Text
+        fontSize="18px"
+        textAlign="center"
+        mt="15px"
+        w={{ base: "90%", md: "1000px" }}
+        mx="auto"
+      >
+        There’s no better place to start the hunt for something new and special. Begin on Indiegogo to find clever and unconventional things that solve everyday problems large and small.
+      </Text>
+      <Box
+        w="290px"
+        m="auto"
+        mt="20px"
+        display="flex"
+        justifyContent={{ base: "center", md: "flex-start" }}
+      >
+        <Button fontSize="14px" color="white" bg="#E51075" borderRadius="2px" _hover={{ bg:"#E51075" }}>
+          SIGN UP NOW
+        </Button>
+        <Button
+          fontSize="14px"
+          color="#E51075"
+          bg="white"
+          borderRadius="2px"
+          border="1px"
+          borderColor="gray.200"
+          ml={{ base: "10px", md: "20px" }}
+          mt={{ base: "10px", md: "0" }}
+          _hover={{ bg:"#E51075" , bg:"white", borderColor:"gray" }}
+        >
+          <a href="https://www.indiegogo.com/about/what-we-do"> LEARN NOW</a>
+        </Button>
       </Box>
-
 
     </div>
   )
