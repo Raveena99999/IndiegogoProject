@@ -44,4 +44,9 @@ React
 Chakra UI
 
 ### screenshots
-![Home section](https://i.ibb.co/k8dyjX2/Screenshot-23.png)
+![Home section 1](https://i.ibb.co/1qSn1TG/Screenshot-23.png)
+![Home section 2](https://i.ibb.co/HYM4cJC/Screenshot-24.png)
+![Home section 3](https://i.ibb.co/YdMtgSp/Screenshot-25.png)
+![Home section 4](https://i.ibb.co/mhsnz9z/Screenshot-26.png)
+![Home section 5](https://i.ibb.co/jhj6G1s/Screenshot-27.png)
+![Home section 6](https://i.ibb.co/m8Rr3hd/Screenshot-28.png)
