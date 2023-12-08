@@ -33,18 +33,18 @@ src/
 App.jsx
 
  ### Functionalties :
-Automatic Image slider ,also added previous and next button
-Signup functionality
-Login functionality
-Logout functionality
-userCards
-Responsive design for all devices (mobile, tablet, desktop)
+  * Automatic Image slider ,also added previous and next button
+  * Signup functionality
+  * Login functionality
+  * Logout functionality
+  * userCards
+  * Responsive design for all devices (mobile, tablet, desktop)
 ### Tech stack
-React
-Chakra UI
-HTML5
-CSS3
-Javascript
+  * React
+  * Chakra UI
+  * HTML5
+  * CSS3
+  * Javascript
 
 ### screenshots
 ![Home section 1](https://i.ibb.co/1qSn1TG/Screenshot-23.png)
