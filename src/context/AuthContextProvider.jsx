@@ -19,9 +19,13 @@ export const AuthSlideContext = createContext();
 
 export default function AuthContextProvider({ children }) {
   const [slide, setSlide] = useState(0);
+  const [isAuth,setIsAuth] =useState(false)
+  const [userDetails,setUserDetails] =useState({})
+
+  
 
   return (
-    <AuthSlideContext.Provider value={{ slide, setSlide, images }}>
+    <AuthSlideContext.Provider value={{ slide, setSlide, images,isAuth,setIsAuth,userDetails,setUserDetails }}>
       {children}
     </AuthSlideContext.Provider>
   );

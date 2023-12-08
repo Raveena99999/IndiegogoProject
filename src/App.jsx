@@ -28,7 +28,6 @@ function App() {
             <Route path="/teamFavourites" element={<TeamFavourite />}/>
 
         </Routes>
-        {/* <Search/> */}
        
       
     </>

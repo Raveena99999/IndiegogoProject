@@ -1,12 +1,12 @@
 
-
-import React,{useEffect, useState} from "react";
+import React,{useContext, useEffect, useState} from "react";
 import {
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
   Box,
-  Image
+  Image,Link,
+  useBreakpointValue
 } from "@chakra-ui/react";
 
 import Login from "../pages/Login";
@@ -14,12 +14,15 @@ import Signup from "../pages/Signup";
 import Explore from "../pages/Explore";
 import Dropdown from "./Dropdown";
 import Search from "../pages/Search";
+import { AuthSlideContext } from "../context/AuthContextProvider";
+import { SignupContext } from "../context/SignupContextProvider";
 
 
 export default function Navbar() {
+
   const[logout,setLogout]=useState(false)
   const [firstname, setFirstname] = useState('');
-
+ const {isAuth,userDetails}=useContext(AuthSlideContext)
   const handleClick =()=>{
     window.location.href="/"
   }
@@ -50,18 +53,20 @@ const handleLogout=()=>{
     setFirstname('')
     console.log("out")
 }
+const direction = useBreakpointValue({ base: "column", md: "column" , lg:"row" });
 
 
   return (
     <Box 
-      h="65px"
+      h="auto"
       display="flex"
       alignItems="center"
       justifyContent="space-between"
       border="1px"
 
       borderColor="gray.200"
-      flexDirection={{ base: "column", md: "row" }} 
+      // flexDirection={{ base: "column", md: "column" }} 
+      flexDirection={direction}
       mb={{ base: "3", sm: "4", md: "6" ,lg:"0" }}
     >
       <Box
@@ -144,8 +149,18 @@ const handleLogout=()=>{
             </BreadcrumbLink>
           </BreadcrumbItem>
 
+         
+
+        <Link to="/Signup">
+          {isAuth===false?userDetails.firstName:<Signup/>&&
+       <Login/>}
+       {/* {isAuth ===false?(<Dropdown ref={dropdownRef} firstName={userDetails.firstname} handleLogout={handleLogout}/>):(<Signup/>)} */}
+        </Link>
+   <Signup style={{color:"white"}}/>
+    <Login/>
+       
           
-          {firstname ? ( 
+          {/* {firstname ? ( 
             <BreadcrumbItem color="#2A2A2A" fontWeight="bold" >
             
             </BreadcrumbItem>
@@ -162,7 +177,10 @@ const handleLogout=()=>{
           ) : (
            
             <Signup  />
-          )} 
+          )}  */}
+
+
+
 
       
         </Breadcrumb>

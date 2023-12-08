@@ -1,6 +1,6 @@
 
 
-import React, { useContext,useState } from "react";
+import React, { useContext,useState ,useEffect} from "react";
 
 import {
   Breadcrumb,
@@ -25,34 +25,65 @@ import {
   Checkbox,
 } from "@chakra-ui/react";
 import { SignupContext } from "../context/SignupContextProvider";
+import { AuthSlideContext } from "../context/AuthContextProvider";
  function Signup() {
   const { isOpenSignup, onOpenSignup, onCloseSignup, initialRefSignup,finalRefSignup } =
     useContext(SignupContext);
-    const [formData, setFormData] = useState({
-      firstName: '',
-      lastName: '',
-      email: '',
-      password: '',
-      newsletter: false,
-      termsAgreed: false
-    });
- const[data,setdata]=useState([])
-    const handleChange = (e) => {
-      const { name, value, type, checked } = e.target;
-      const newValue = type === 'checkbox' ? checked : value;
-  
-      setFormData({ ...formData, [name]: newValue });
-    };
-  
-    const handleSubmit = (event) => {
-      event.preventDefault();
-setdata([...data,formData])
-      localStorage.setItem("myobject", JSON.stringify(data));
-      console.log("submit");
-      console.log(data,'data')
-      // window.location.href="/teamFavourites"
-    };
-  
+
+  const{setUserDetails,setIsAuth}=useContext(AuthSlideContext)
+
+
+const [formData, setFormData] = useState({
+  firstName: "",
+  lastName: "",
+  email: "",
+  password: "",
+  newsletter: false,
+  termsAgreed: false,
+});
+
+
+// useEffect(() => {
+//   const storedData = JSON.parse(localStorage.getItem("myobject"));
+//   if (storedData) {
+//     setFormData(storedData);
+//   }
+// }, []);
+
+// const handleChange = (e) => {
+//   const { name, value, type, checked } = e.target;
+//   const newValue = type === "checkbox" ? checked : value;
+// setFormData({ ...formData, [name]: newValue });
+
+// };
+
+// const handleSubmit = (event) => {
+//   event.preventDefault();
+//   const newData = [...data, formData];
+//   setFormData(newData);
+//   localStorage.setItem("myobject", JSON.stringify(newData));
+//   console.log("submit");
+//   console.log(newData, "data");
+//   setFormData({
+//     firstName: "",
+//     lastName: "",
+//     email: "",
+//     password: "",
+//     newsletter: false,
+//     termsAgreed: false,
+//   });
+// };
+function handleChange(e){
+setFormData({ ...formData ,[e.target.name]:e.target.value})
+}
+function handleSubmit(e){
+e.preventDefault()
+console.log(formData)
+setUserDetails(formData)
+setIsAuth(false)
+}
+
+
 
   return (
     <div>

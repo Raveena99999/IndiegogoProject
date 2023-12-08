@@ -21,33 +21,61 @@ import {
   Link,
 } from "@chakra-ui/react";
 import { LoginContext } from "../context/LoginContextProvider";
+import { AuthSlideContext } from "../context/AuthContextProvider";
 
  function Login() {
  
 
   const {  isOpenLogin, onOpenLogin, onCloseLogin,initialRefLogin,finalRefLogin} =
     useContext(LoginContext);
-    console.log("hy", onOpenLogin)
 
-    const [email,setEmail]=useState("")
-    const [password,setPassword]=useState("")
-    const [colr,setColr]=useState("white")
-    const handleEmailChange =(e)=>{
-   setEmail(e.target.value)
-   if(email.includes("@gmail.com")){
-     setColr("white")
-   }
-   else{
-    setColr("red")
-   }
-    }
-    const handleLogin=()=>{
- 
-      if (email==="" || password==""){
-        alert('Please fill all fields')
+    const{setUserDetails,setIsAuth,userDetails}=useContext(AuthSlideContext)
+
+
+    const [formData, setFormData] = useState({
+      // firstName: "",
+      // lastName: "",
+      email: "",
+      password: "",
+      // newsletter: false,
+      // termsAgreed: false,
+    });
+    function handleChange(e){
+      setFormData({ ...formData ,[e.target.name]:e.target.value})
       }
-      console.log(email,"email")
-    }
+      function handleSubmit(e){
+      e.preventDefault()
+      console.log(formData)
+      // setUserDetails(formData)
+      if(formData.email===userDetails.email && formData.password===userDetails.password){
+        alert("correct")
+        setIsAuth(true)
+      }
+      else{
+        alert('Incorrect username or password')
+      }
+      }
+
+
+  //   const [email,setEmail]=useState("")
+  //   const [password,setPassword]=useState("")
+  //   const [colr,setColr]=useState("white")
+  //   const handleEmailChange =(e)=>{
+  //  setEmail(e.target.value)
+  //  if(email.includes("@gmail.com")){
+  //    setColr("white")
+  //  }
+  //  else{
+  //   setColr("red")
+  //  }
+  //   }
+    // const handleLogin=()=>{
+ 
+    //   if (email==="" || password==""){
+    //     alert('Please fill all fields')
+    //   }
+    //   console.log(email,"email")
+    // }
 
   return (
     <>
@@ -68,6 +96,8 @@ import { LoginContext } from "../context/LoginContextProvider";
           >
             <ModalOverlay />
             <ModalContent h="600px">
+            <form onSubmit={handleSubmit}>
+
               <ModalHeader fontSize="36px" textAlign="center">
                 Welcome back!
               </ModalHeader>
@@ -81,17 +111,14 @@ import { LoginContext } from "../context/LoginContextProvider";
                 >
                   Log in to continue.
                 </Text>
-             
-                <FormControl>
+                <FormControl onSubmit={handleSubmit}>
                   <FormLabel>Email</FormLabel>
-                  <Input includes="@gmail.com" type="email" onChange={handleEmailChange} name="email" ref={initialRefLogin} placeholder="Your Email" />
-                  {colr === "red" || (
-    <h2 style={{ color: colr }}>Please enter a valid email id</h2>
-  )}                </FormControl>
+                  <Input includes="@gmail.com" type="email" onChange={handleChange} name="email" ref={initialRefLogin} placeholder="Your Email" />
+                   </FormControl>
 
                 <FormControl mt={4}>
                   <FormLabel>Password</FormLabel>
-                  <Input type="password" onChange={(e)=>setPassword(e.target.value)} name="password" placeholder="Password" />
+                  <Input type="password" onChange={handleChange} name="password" placeholder="Password" />
                 </FormControl>
                 <Link
                   href="https://www.indiegogo.com/accounts/password/new"
@@ -105,7 +132,7 @@ import { LoginContext } from "../context/LoginContextProvider";
               </ModalBody>
 
               <ModalFooter>
-                <Button onClick={handleLogin} colorScheme="pink" mr={3} w="100%">
+                <Button type="submit" colorScheme="pink" mr={3} w="100%">
                   LOG IN
                 </Button>
               </ModalFooter>
@@ -144,6 +171,7 @@ import { LoginContext } from "../context/LoginContextProvider";
                   </Text>
                 </Box>
               </ModalFooter>
+              </form>
             </ModalContent>
           </Modal>
         </BreadcrumbItem>
