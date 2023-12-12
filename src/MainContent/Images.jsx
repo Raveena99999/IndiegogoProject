@@ -12,14 +12,14 @@ import {
 export default function Images() {
   return (
     <div>
-      <Flex w="90%" mx="auto" mt="20px">
-        <Box position="relative" p="4" h="420px" w="700px">
+      <Flex w="90%" m="auto" mt="20px"  direction={{base:"column",sm:"column",md:"row",lg:"row"}}>
+        <Box position="relative" p="4" h="420px" w={{base:"100%",md:"50%"}} >
           <Image
             w="100%"
             h="100%"
             src="https://media.istockphoto.com/id/1359675618/photo/young-man-sitting-on-a-gray-sofa-caresses-the-head-of-a-brown-tabby-cat.webp?b=1&s=170667a&w=0&k=20&c=SLPzt0_K6B5PAL3pHJ-HqXkC6b1yO1bKK0od7n5m_38="
           />
-          <Flex>
+          <Flex  h="5vh">
             <Box
               p="2"
               ml="-12px"
@@ -62,7 +62,7 @@ export default function Images() {
           </Box>
         </Box>
 
-        <Box position="relative" p="4" h="420px" w="700px">
+        <Box position="relative" p="4" h="420px" w={{base:"100%",md:"50%"}}  >
           <Image
             w="100%"
             h="100%"
@@ -119,8 +119,9 @@ export default function Images() {
         mt="35px"
         mt={{ sm: "100", base: "100", lg: "7" }}
         mb={{ sm: "180", base: "180", lg: "0" }}
+        direction={{base:"column",sm:"column",md:"row",lg:"row"}}
       >
-        <Box position="relative" p="4" h="420px" w="700px">
+        <Box position="relative" p="4" h="420px"  w={{base:"100%",md:"50%"}} >
           <Image src="https://www.shutterstock.com/image-photo/black-drip-electric-coffee-machine-600nw-2111869688.jpg" />
           <Flex>
             <Box
@@ -167,7 +168,7 @@ export default function Images() {
           </Box>
         </Box>
 
-        <Box position="relative" p="4" h="420px" w="700px">
+        <Box position="relative" p="4" h="420px" w={{base:"100%",md:"50%"}}>
           <Image
             w="100%"
             h="100%"
