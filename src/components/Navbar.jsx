@@ -17,9 +17,10 @@ import {
   Button,
   useDisclosure,
   Text,
-  Stack
+  Stack,
+  Flex,
 } from "@chakra-ui/react";
-import { HamburgerIcon } from '@chakra-ui/icons'
+import { HamburgerIcon } from "@chakra-ui/icons";
 import Login from "../pages/Login";
 import Signup from "../pages/Signup";
 import Explore from "../pages/Explore";
@@ -31,12 +32,16 @@ import { SignupContext } from "../context/SignupContextProvider";
 export default function Navbar() {
   const [logout, setLogout] = useState(false);
   const [firstname, setFirstname] = useState("");
-  const { isAuth, userDetails } = useContext(AuthSlideContext);
-  const { isOpen, onOpen, onClose } = useDisclosure()
+  const { isAuth, userDetails, setIsAuth } = useContext(AuthSlideContext);
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const dropdownRef = React.useRef();
+
   const handleClick = () => {
     window.location.href = "/";
   };
-  const btnRef = React.useRef()
+  const btnRef = React.useRef();
   useEffect(() => {
     const finalObj = JSON.parse(localStorage.getItem("myobject"));
     if (finalObj && finalObj.length > 0) {
@@ -45,16 +50,15 @@ export default function Navbar() {
   }, []);
 
   const openDropdown = () => {
-    if (dropdownRef && dropdownRef.current) {
-      dropdownRef.current.onOpen();
-    }
+    setIsDropdownOpen(!isDropdownOpen); // Open the dropdown
   };
-  const dropdownRef = React.useRef();
 
   const handleLogout = () => {
     setLogout(true);
     setFirstname("");
     console.log("out");
+    setIsDropdownOpen(false); // Close the dropdown on logout
+    setIsAuth(false);
   };
   const mobile = useBreakpointValue({
     base: true,
@@ -69,7 +73,7 @@ export default function Navbar() {
       alignItems="center"
       justifyContent="space-between"
       border="1px"
-      borderColor="gray.200" 
+      borderColor="gray.200"
       mb={{ base: "3", sm: "4", md: "6", lg: "0" }}
     >
       <Box
@@ -91,149 +95,138 @@ export default function Navbar() {
             </BreadcrumbLink>
           </BreadcrumbItem>
 
-         {!mobile && <Explore />}
+          {!mobile && <Explore />}
 
-         {!mobile && <BreadcrumbItem color="#2A2A2A" fontWeight="bold">
-            <BreadcrumbLink
-              href="/ourTop10Finds"
-              _hover={{ color: "#E51075", textDecoration: "none" }}
-            >
-              {" "}
-              Our Top 10 Finds
-            </BreadcrumbLink>
-          </BreadcrumbItem>}
-        { !mobile && <BreadcrumbItem color="#2A2A2A" fontWeight="bold">
-            <BreadcrumbLink
-              href="/teamFavourites"
-              _hover={{ color: "#E51075", textDecoration: "none" }}
-            >
-              Team Favourites
-            </BreadcrumbLink>
-          </BreadcrumbItem>}
+          {!mobile && (
+            <BreadcrumbItem color="#2A2A2A" fontWeight="bold">
+              <BreadcrumbLink
+                href="/ourTop10Finds"
+                _hover={{ color: "#E51075", textDecoration: "none" }}
+              >
+                {" "}
+                Our Top 10 Finds
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+          )}
+          {!mobile && (
+            <BreadcrumbItem color="#2A2A2A" fontWeight="bold">
+              <BreadcrumbLink
+                href="/teamFavourites"
+                _hover={{ color: "#E51075", textDecoration: "none" }}
+              >
+                Team Favourites
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+          )}
           <Search />
         </Breadcrumb>
       </Box>
 
-     {!mobile && <Box
-        h="auto"
-        w={{ base: "100%", md: "420px" }}
-        display="flex"
-        alignItems="center"
-        justifyContent="space-around"
-      >
-        <Breadcrumb separator="">
-          <BreadcrumbItem color="#2A2A2A" fontWeight="bold">
-            <BreadcrumbLink
-              href="/startaCompaign"
-              // target="_blank"
-              _hover={{ color: "#E51075", textDecoration: "none" }}
-            >
-              Start a Compaign
-            </BreadcrumbLink>
-          </BreadcrumbItem>
-
-          <BreadcrumbItem color="#2A2A2A" fontWeight="bold">
-            <BreadcrumbLink
-              href="/whatweDo"
-              _hover={{ color: "#E51075", textDecoration: "none" }}
-            >
-              What We Do
-            </BreadcrumbLink>
-          </BreadcrumbItem>
-
-          <Link to="/Signup">
-            {isAuth === false ? userDetails.firstName : <Signup /> && <Login />}
-            {/* {isAuth ===false?(<Dropdown ref={dropdownRef} firstName={userDetails.firstname} handleLogout={handleLogout}/>):(<Signup/>)} */}
-          </Link>
-          <Signup style={{ color: "white" }} />
-          <Login />
-
-          {/* {firstname ? ( 
-            <BreadcrumbItem color="#2A2A2A" fontWeight="bold" >
-            
+      {!mobile && (
+        <Box
+          h="auto"
+          w={{ base: "100%", md: "420px" }}
+          display="flex"
+          alignItems="center"
+          justifyContent="space-around"
+        >
+          <Breadcrumb separator="">
+            <BreadcrumbItem color="#2A2A2A" fontWeight="bold">
+              <BreadcrumbLink
+                href="/startaCompaign"
+                _hover={{ color: "#E51075", textDecoration: "none" }}
+              >
+                Start a Compaign
+              </BreadcrumbLink>
             </BreadcrumbItem>
-          ) : (
-           
-            <Login />
-          )} 
 
+            <BreadcrumbItem color="#2A2A2A" fontWeight="bold">
+              <BreadcrumbLink
+                href="/whatweDo"
+                _hover={{ color: "#E51075", textDecoration: "none" }}
+              >
+                What We Do
+              </BreadcrumbLink>
+            </BreadcrumbItem>
 
-          {firstname ? ( 
-          
-            <Dropdown  ref={dropdownRef} firstName={firstname} handleLogout={handleLogout}/>
-
-          ) : (
-           
-            <Signup  />
-          )}  */}
-        </Breadcrumb>
-      </Box>}
+            <Link to="/Signup">
+              {isAuth ? (
+                <Dropdown
+                  isOpen={isDropdownOpen}
+                  onClose={() => setIsDropdownOpen(false)}
+                  firstName={userDetails.firstName}
+                  handleLogout={handleLogout}
+                  openDropdown={openDropdown}
+                />
+              ) : (
+                <Flex>
+                  <Login />
+                  <Signup />
+                </Flex>
+              )}
+            </Link>
+          </Breadcrumb>
+        </Box>
+      )}
       {mobile && (
         <>
-        <Button ref={btnRef} colorScheme='pink' onClick={onOpen}>
-        <HamburgerIcon/>
-      </Button>
-      <Drawer
-        isOpen={isOpen}
-        placement='left'
-        onClose={onClose}
-        finalFocusRef={btnRef}
-        
-      >
-        <DrawerOverlay />
-        <DrawerContent bg="pink" h="85vh">
-          <DrawerCloseButton />
-          <DrawerHeader>
-            <Text textAlign="center">Welcome to indiegogo</Text>
-          </DrawerHeader>
+          <Button ref={btnRef} colorScheme="pink" onClick={onOpen}>
+            <HamburgerIcon />
+          </Button>
+          <Drawer
+            isOpen={isOpen}
+            placement="left"
+            onClose={onClose}
+            finalFocusRef={btnRef}
+          >
+            <DrawerOverlay />
+            <DrawerContent bg="pink" h="85vh">
+              <DrawerCloseButton />
+              <DrawerHeader>
+                <Text textAlign="center">Welcome to indiegogo</Text>
+              </DrawerHeader>
 
-          <DrawerBody  >
-            <Breadcrumb>
-            <Stack direction="column" gap="7vh" justify="center">
-            <BreadcrumbItem>
-          <BreadcrumbLink
-              href="/ourTop10Finds"
-              _hover={{ color: "#E51075", textDecoration: "none" }}
-            >
-              {" "}
-              Our Top 10 Finds
-            </BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbLink
-              href="/teamFavourites"
-              _hover={{ color: "#E51075", textDecoration: "none" }}
-            >
-              Team Favourites
-            </BreadcrumbLink>
+              <DrawerBody>
+                <Breadcrumb>
+                  <Stack direction="column" gap="7vh" justify="center">
+                    <BreadcrumbItem>
+                      <BreadcrumbLink
+                        href="/ourTop10Finds"
+                        _hover={{ color: "#E51075", textDecoration: "none" }}
+                      >
+                        {" "}
+                        Our Top 10 Finds
+                      </BreadcrumbLink>
+                    </BreadcrumbItem>
+                    <BreadcrumbLink
+                      href="/teamFavourites"
+                      _hover={{ color: "#E51075", textDecoration: "none" }}
+                    >
+                      Team Favourites
+                    </BreadcrumbLink>
 
-            <BreadcrumbItem>
-            <BreadcrumbLink
-              href="/startaCompaign"
-              // target="_blank"
-              _hover={{ color: "#E51075", textDecoration: "none" }}
-            >
-              Start a Compaign
-            </BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbLink
-              href="/whatweDo"
-              // target="_blank"
-              _hover={{ color: "#E51075", textDecoration: "none" }}
-            >
-              What We Do
-            </BreadcrumbLink>
-            </Stack>
-            </Breadcrumb>
+                    <BreadcrumbItem>
+                      <BreadcrumbLink
+                        href="/startaCompaign"
+                        _hover={{ color: "#E51075", textDecoration: "none" }}
+                      >
+                        Start a Compaign
+                      </BreadcrumbLink>
+                    </BreadcrumbItem>
+                    <BreadcrumbLink
+                      href="/whatweDo"
+                      _hover={{ color: "#E51075", textDecoration: "none" }}
+                    >
+                      What We Do
+                    </BreadcrumbLink>
+                  </Stack>
+                </Breadcrumb>
+              </DrawerBody>
 
-
-          </DrawerBody>
-
-          <DrawerFooter>
-           
-          </DrawerFooter>
-        </DrawerContent>
-      </Drawer>
-      </>
+              <DrawerFooter></DrawerFooter>
+            </DrawerContent>
+          </Drawer>
+        </>
       )}
     </Box>
   );

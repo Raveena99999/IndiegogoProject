@@ -7,7 +7,8 @@ import {
   Heading,
   Input,
   Container,
-  Button,Flex
+  Button,
+  Flex,
 } from "@chakra-ui/react";
 import {
   Modal,
@@ -28,35 +29,34 @@ export default function Footer() {
   return (
     <div>
       <Flex
-        
         h="auto"
         mt={10}
         bg="rgb(245,245,245)"
-        direction={{base:"column",md:"column",lg:"column"}}
+        direction={{ base: "column", md: "column", lg: "column" }}
         justify="space-around"
       >
-        <Box h="auto" mt={71} display="flex" flexDirection={{base:"column-reverse", md:"row", lg:"row"}} justifyContent={{md:"space-evenly",lg:"space-around"}} >
+        <Box
+          h="auto"
+          mt={71}
+          display="flex"
+          flexDirection={{ base: "column-reverse", md: "row", lg: "row" }}
+          justifyContent={{ md: "space-evenly", lg: "space-around" }}
+        >
           <Box
-          // border="2px solid black"
             h="auto"
-            w={{md:"45%",lg:"60%"}}
+            w={{ md: "45%", lg: "60%" }}
             mt={2}
             display="flex"
             justifyContent="space-around"
-            flexDirection={{base:"column",md:"column",lg:"row"}}
+            flexDirection={{ base: "column", md: "column", lg: "row" }}
           >
             <Box
-            // border="2px solid red"
               w={{ base: "90%", sm: "45%", md: "50%", lg: "23%" }}
               mb={4}
               px={{ base: 2, md: 4 }}
-              m={{md:"auto",lg:"0px"}}
-  
+              m={{ md: "auto", lg: "0px" }}
             >
-              <Text
-                color="#6A6A6A"
-                fontSize={{ base: "16px", md: "18px" }}
-              >
+              <Text color="#6A6A6A" fontSize={{ base: "16px", md: "18px" }}>
                 EXPLORE
               </Text>
               <Box mt={2}>
@@ -66,18 +66,12 @@ export default function Footer() {
             </Box>
 
             <Box
-            // border="2px solid red"
-            m={{md:"auto",lg:"0px"}}
-              
+              m={{ md: "auto", lg: "0px" }}
               w={{ base: "90%", sm: "45%", md: "50%", lg: "23%" }}
               mb={4}
               px={{ base: 2, md: 4 }}
             >
-              <Text
-                color="#6A6A6A"
-                
-                fontSize={{ base: "16px", md: "18px" }}
-              >
+              <Text color="#6A6A6A" fontSize={{ base: "16px", md: "18px" }}>
                 ABOUT
               </Text>
               <Box mt={2}>
@@ -92,17 +86,12 @@ export default function Footer() {
             </Box>
 
             <Box
-              m={{md:"auto",lg:"0px"}}
-              // border="1px solid red"
+              m={{ md: "auto", lg: "0px" }}
               w={{ base: "90%", sm: "45%", md: "60%", lg: "23%" }}
               mb={4}
               px={{ base: 2, md: 4 }}
             >
-              <Text
-                color="#6A6A6A"
-                
-                fontSize={{ base: "16px", md: "18px" }}
-              >
+              <Text color="#6A6A6A" fontSize={{ base: "16px", md: "18px" }}>
                 ENTREPRENEURS
               </Text>
               <Box mt={2}>
@@ -188,11 +177,10 @@ export default function Footer() {
           display="flex"
           alignItems="center"
           justifyContent="space-between"
-          
-          flexDirection={{base:"column",md:"column", lg:"row"}}
-          w={{base:"100%",md:"100%",lg:"450px"}}
+          flexDirection={{ base: "column", md: "column", lg: "row" }}
+          w={{ base: "100%", md: "100%", lg: "450px" }}
           h="70px"
-          ml={{base:"0px", md:"0px",lg:"5vw"}}
+          ml={{ base: "0px", md: "0px", lg: "5vw" }}
         >
           <Box>
             <Button
@@ -337,33 +325,57 @@ export default function Footer() {
           display="flex"
           justifyContent="space-evenly"
           m="auto"
-          flexDirection={{base:"column", md:"column", lg:"row"}}
+          flexDirection={{ base: "column", md: "column", lg: "row" }}
         >
-          <Box w={{base:"100%",md:"100%",lg:"31%"}} display="flex" justifyContent="space-evenly">
-          <Link fontSize={{base:"11px",md:"13px",lg:"13px"}} href="https://www.indiegogo.com/about/terms">
-            {" "}
-            Terms of use
-          </Link>
-          <Link fontSize={{base:"11px",md:"13px",lg:"13px"}} href="https://www.indiegogo.com/about/privacy">
-            Privacy Policy
-          </Link>
-          <Link fontSize={{base:"11px",md:"13px",lg:"13px"}} href="https://www.indiegogo.com/">
-            Cookie Policy
-          </Link>
-          </Box>
-          <Box w={{base:"100%",md:"100%",lg:"31%"}} display="flex" justifyContent={{base:"space-between",md:"space-around"}}>
-          <Link fontSize={{base:"11px",md:"13px",lg:"13px"}} href="https://www.indiegogo.com/">
-            Do Not Sell My Personal Information
-          </Link>
-          <Link
-            fontSize={{base:"11px",md:"13px",lg:"13px"}}
-            href="https://www.indiegogo.com/about/accessibility"
-
+          <Box
+            w={{ base: "100%", md: "100%", lg: "31%" }}
+            display="flex"
+            justifyContent="space-evenly"
           >
-            Accessibility
-          </Link>
+            <Link
+              fontSize={{ base: "11px", md: "13px", lg: "13px" }}
+              href="https://www.indiegogo.com/about/terms"
+            >
+              {" "}
+              Terms of use
+            </Link>
+            <Link
+              fontSize={{ base: "11px", md: "13px", lg: "13px" }}
+              href="https://www.indiegogo.com/about/privacy"
+            >
+              Privacy Policy
+            </Link>
+            <Link
+              fontSize={{ base: "11px", md: "13px", lg: "13px" }}
+              href="https://www.indiegogo.com/"
+            >
+              Cookie Policy
+            </Link>
           </Box>
-          <Text fontSize={{base:"11px",md:"13px",lg:"13px"}} textAlign={{base:"center",md:"center",lg:"none"}}>@ 2023 Indiegogo.Inc.All Rights Reserved</Text>
+          <Box
+            w={{ base: "100%", md: "100%", lg: "31%" }}
+            display="flex"
+            justifyContent={{ base: "space-between", md: "space-around" }}
+          >
+            <Link
+              fontSize={{ base: "11px", md: "13px", lg: "13px" }}
+              href="https://www.indiegogo.com/"
+            >
+              Do Not Sell My Personal Information
+            </Link>
+            <Link
+              fontSize={{ base: "11px", md: "13px", lg: "13px" }}
+              href="https://www.indiegogo.com/about/accessibility"
+            >
+              Accessibility
+            </Link>
+          </Box>
+          <Text
+            fontSize={{ base: "11px", md: "13px", lg: "13px" }}
+            textAlign={{ base: "center", md: "center", lg: "none" }}
+          >
+            @ 2023 Indiegogo.Inc.All Rights Reserved
+          </Text>
         </Box>
       </Flex>
     </div>
