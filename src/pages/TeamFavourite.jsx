@@ -282,7 +282,7 @@ export default function TeamFavourite() {
       </Box>
       <Flex>
         <Box p="4">
-          <Flex justifyContent="space-around" w="450px" ml="25px">
+          <Flex direction={{base:"column" , md:"row",lg:"row"}} justifyContent="space-around" w={{base:"100%",md:"100%",lg:"450px"}} ml="25px">
             <Text fontSize="18px">213 projects</Text>
             <Text fontSize="18px"> 156k backers</Text>
             <Text fontSize="18px">$50.8M raised</Text>

@@ -138,7 +138,7 @@ export default function OurTop10Finds() {
         </Heading>
         <Text
           mt={{ base: "15px", md: "25px" }}
-          w={{ base: "90%", md: "590px" }}
+          w={{ base: "100%", md: "100%",lg:"100%" }}
           mx="auto"
           fontSize={{ base: "sm", md: "md", lg: "lg" }}
         >
@@ -147,7 +147,9 @@ export default function OurTop10Finds() {
           shiping now.
         </Text>
         <Flex
-          w="500px"
+          // w="500px"
+          w={{base:"100%",md:"500px",lg:"500px"}}
+          align={{base:"center"}}
           mx="auto"
           mt="15px"
           flexDirection={{ base: "column", md: "row" }}
