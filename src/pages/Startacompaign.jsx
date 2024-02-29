@@ -1,8 +1,10 @@
-import React from "react";
+import React,{useContext} from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { Container, Heading, Text, Box, Flex } from "@chakra-ui/react";
 import { SimpleGrid, Link, Image } from "@chakra-ui/react";
+import Login from "../pages/Login";
+import { LoginContext } from "../context/LoginContextProvider";
 
 let ourTop10Card = [
  
@@ -80,8 +82,11 @@ let ourTop10Card = [
 ];
 
 export default function Startacompaign() {
+  const {onOpenLogin} =useContext(LoginContext)
+
   return (
     <div>
+      <Login/>
       <Navbar />
       <Container  h="100vh" mt="10rem">
         <Heading textAlign="center">Every fundraise has its beginning</Heading>
@@ -93,7 +98,7 @@ export default function Startacompaign() {
             <Text ml="1rem" mt="1rem" fontSize="20px" fontWeight="bold">Prelaunch</Text>
             <Text ml="1rem" mt="1rem">Collect emails, gain exposure and grow your audience</Text>
           </Box>
-          <Image  src="https://cdn-icons-png.flaticon.com/128/9312/9312239.png"/>
+          <Image onClick={onOpenLogin}  src="https://cdn-icons-png.flaticon.com/128/9312/9312239.png"/>
         </Flex>
 
         <Flex  mt="1rem" h="20vh" border="2px solid lightgray" borderRadius="7px">
@@ -101,7 +106,7 @@ export default function Startacompaign() {
             <Text ml="1rem" mt="1rem" fontSize="20px" fontWeight="bold">Crowdfunding</Text>
             <Text ml="1rem" mt="1rem">Launch your campaign and raise funds from our backers</Text>
           </Box>
-          <Image  src="https://cdn-icons-png.flaticon.com/128/9312/9312239.png"/>
+          <Image onClick={onOpenLogin}   src="https://cdn-icons-png.flaticon.com/128/9312/9312239.png"/>
         </Flex>
 
         <Heading mt="5rem" textAlign="center">

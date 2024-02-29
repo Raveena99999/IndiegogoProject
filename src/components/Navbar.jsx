@@ -30,8 +30,8 @@ import { AuthSlideContext } from "../context/AuthContextProvider";
 import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
-  const [setLogout] = useState(false);
-  const [setFirstname] = useState("");
+  const [islogout,setLogout] = useState(false);
+  const [firstName,setFirstname] = useState("");
   const { isAuth, userDetails, setIsAuth } = useContext(AuthSlideContext);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);

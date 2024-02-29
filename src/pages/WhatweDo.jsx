@@ -1,9 +1,9 @@
-import React from "react";
+import React ,{useContext}from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { Heading, Text, Flex, Box, Image, Container } from "@chakra-ui/react";
-
 export default function WhatweDo() {
+
   return (
     <div>
       <Navbar />
@@ -40,7 +40,7 @@ export default function WhatweDo() {
       
         <Flex w="90%"  justifyContent="space-around" m="auto" mt="3.5rem">
           <Box w="40%">
-            <Image h="60vh"w="90vw" src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ8Q_fqyeQX7ApY_wTSP9O8cEze-DENmeo7EVAQVe1lsWjKVdNe" />
+            <Image  h="60vh"w="90vw" src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQ8Q_fqyeQX7ApY_wTSP9O8cEze-DENmeo7EVAQVe1lsWjKVdNe" />
           </Box>
           <Box w="50%">
             <Heading>What is a perk?</Heading>

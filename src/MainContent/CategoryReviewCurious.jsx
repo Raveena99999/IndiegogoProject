@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Box, Flex, Image, Link, Text, Button } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
-
-export default function CategoryReviewCurious({}) {
+import Signup from "../pages/Signup"
+import { SignupContext } from "../context/SignupContextProvider";
+export default function CategoryReviewCurious() {
   const navigate = useNavigate();
-
+const {onOpenSignup} =useContext(SignupContext)
   return (
     <div>
+      <Signup onOpenSignup={onOpenSignup}/>
       <Flex
         direction="column"
         alignItems="center"
@@ -272,6 +274,7 @@ export default function CategoryReviewCurious({}) {
           bg="#E51075"
           borderRadius="2px"
           _hover={{ bg: "#E51075" }}
+          onClick={onOpenSignup}
         >
           SIGN UP NOW
         </Button>
@@ -284,7 +287,7 @@ export default function CategoryReviewCurious({}) {
           borderColor="gray.200"
           ml={{ base: "10px", md: "20px" }}
           mt={{ base: "10px", md: "0" }}
-          _hover={{ bg: "#E51075", bg: "white", borderColor: "gray" }}
+          _hover={{ bg: "#E51075" ,color:"white", borderColor: "gray" }}
         >
           <Link 
                     onClick={() => navigate("/whatweDo")}
