@@ -23,7 +23,7 @@ import {
 import { LoginContext } from "../context/LoginContextProvider";
 import { AuthSlideContext } from "../context/AuthContextProvider";
 
-function Login() {
+function Login({ onOpenSignup }) {
   const {
     isOpenLogin,
     onOpenLogin,
@@ -49,7 +49,7 @@ function Login() {
       formData.email === userDetails.email &&
       formData.password === userDetails.password
     ) {
-      alert("correct");
+      alert("You logged in successfully");
       setIsAuth(true);
     } else {
       alert("Incorrect username or password");
@@ -150,7 +150,7 @@ function Login() {
                     <Text fontSize="17px" textAlign="center" color="">
                       New to Indiegogo?{" "}
                       <Link
-                        href="https://www.indiegogo.com/"
+                        onClick={onOpenSignup}
                         fontWeight="bold"
                         fontSize="15px"
                         _hover={{ color: "#E51075" }}

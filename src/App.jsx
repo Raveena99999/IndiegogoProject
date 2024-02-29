@@ -16,6 +16,8 @@ import OurTop10Finds from "./pages/OurTop10Finds";
 import TeamFavourite from "./pages/TeamFavourite";
 import Dropdown from "./components/Dropdown";
 import Search from "./pages/Search.jsx";
+import Startacompaign from "./pages/Startacompaign.jsx";
+import WhatweDo from "./pages/WhatweDo.jsx";
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function App() {
 
             <Route path="/ourTop10Finds" element={<OurTop10Finds />}/>
             <Route path="/teamFavourites" element={<TeamFavourite />}/>
+            <Route path="/startacompaign" element={<Startacompaign />}/>
+            <Route path="/whatwedo" element={<WhatweDo />}/>
 
         </Routes>
        

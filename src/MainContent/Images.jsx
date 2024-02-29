@@ -8,8 +8,11 @@ import {
   Text,
   Container,
 } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 
 export default function Images() {
+  const navigate = useNavigate();
+
   return (
     <div>
       <Flex w="90%" m="auto" mt="20px"  direction={{base:"column",sm:"column",md:"row",lg:"row"}}>
@@ -34,7 +37,8 @@ export default function Images() {
             <Box p="2" fontWeight="bold" fontSize="14px" mt="0px" h="5px">
               <Link
                 mt="-10px"
-                href="https://www.indiegogo.com/campaign_collections/top-10?i=hmcl"
+                onClick={() => navigate("/ourTop10Finds")}
+
               >
                 SEE THE COLLECTION >
               </Link>
@@ -54,7 +58,8 @@ export default function Images() {
             _hover={{ textDecoration: "none" }}
           >
             <Link
-              href="http://127.0.0.1:5173/ourTop10Finds"
+              onClick={() => navigate("/ourTop10Finds")}
+
               _hover={{ textDecoration: "none" }}
             >
               10 Cool & Clever Friends
@@ -84,7 +89,8 @@ export default function Images() {
             <Box p="2" fontWeight="bold" fontSize="14px" mt="0px" h="5px">
               <Link
                 mt="-10px"
-                href="https://www.indiegogo.com/campaign_collections/top-10?i=hmcl"
+                onClick={() => navigate("/ourTop10Finds")}
+
               >
                 SEE THE COLLECTION >
               </Link>
@@ -104,7 +110,8 @@ export default function Images() {
             _hover={{ textDecoration: "none" }}
           >
             <Link
-              href="http://127.0.0.1:5173/teamFavourites"
+              onClick={() => navigate("/teamFavourites")}
+
               _hover={{ textDecoration: "none" }}
             >
               Team Favourites
@@ -140,7 +147,8 @@ export default function Images() {
             <Box p="2" fontWeight="bold" fontSize="14px" mt="0px" h="5px">
               <Link
                 mt="-10px"
-                href="https://www.indiegogo.com/campaign_collections/top-10?i=hmcl"
+                onClick={() => navigate("/ourTop10Finds")}
+
               >
                 SEE THE COLLECTION >
               </Link>
@@ -160,7 +168,8 @@ export default function Images() {
             _hover={{ textDecoration: "none" }}
           >
             <Link
-              href="https://www.indiegogo.com/campaign_collections/food-drink/?i=hmcl"
+              onClick={() => navigate("/ourTop10Finds")}
+
               _hover={{ textDecoration: "none" }}
             >
               Food & Drink
@@ -192,7 +201,8 @@ export default function Images() {
             <Box p="2" fontWeight="bold" fontSize="14px" mt="0px" h="5px">
               <Link
                 mt="-10px"
-                href="https://www.indiegogo.com/campaign_collections/top-10?i=hmcl"
+                onClick={() => navigate("/ourTop10Finds")}
+
               >
                 SEE THE COLLECTION >
               </Link>
@@ -212,7 +222,8 @@ export default function Images() {
             _hover={{ textDecoration: "none" }}
           >
             <Link
-              href="https://www.indiegogo.com/campaign_collections/?i=hmhd"
+              onClick={() => navigate("/teamFavourites")}
+
               _hover={{ textDecoration: "none" }}
             >
               Other Collections

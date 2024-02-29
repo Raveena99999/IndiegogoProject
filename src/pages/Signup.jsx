@@ -24,6 +24,8 @@ import {
 } from "@chakra-ui/react";
 import { SignupContext } from "../context/SignupContextProvider";
 import { AuthSlideContext } from "../context/AuthContextProvider";
+import { useNavigate } from "react-router-dom";
+
 function Signup() {
   const {
     isOpenSignup,
@@ -43,6 +45,7 @@ function Signup() {
     newsletter: false,
     termsAgreed: false,
   });
+  const navigate = useNavigate();
 
   function handleChange(e) {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -73,7 +76,7 @@ function Signup() {
             onClose={onCloseSignup}
           >
             <ModalOverlay />
-            <ModalContent h="800px">
+            <ModalContent h="850px">
               <form onSubmit={handleSubmit}>
                 <ModalHeader fontSize="36px" textAlign="center">
                   Welcome!
@@ -203,7 +206,8 @@ function Signup() {
                     <Text fontSize="17px" textAlign="center" color="">
                       Already have an account?{" "}
                       <Link
-                        href="https://www.indiegogo.com/"
+                       
+
                         fontWeight="bold"
                         fontSize="15px"
                         _hover={{ color: "#E51075" }}

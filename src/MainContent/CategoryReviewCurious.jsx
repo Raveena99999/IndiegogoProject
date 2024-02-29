@@ -1,6 +1,10 @@
 import React from "react";
 import { Box, Flex, Image, Link, Text, Button } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
+
 export default function CategoryReviewCurious({}) {
+  const navigate = useNavigate();
+
   return (
     <div>
       <Flex
@@ -282,7 +286,10 @@ export default function CategoryReviewCurious({}) {
           mt={{ base: "10px", md: "0" }}
           _hover={{ bg: "#E51075", bg: "white", borderColor: "gray" }}
         >
-          <a href="https://www.indiegogo.com/about/what-we-do"> LEARN NOW</a>
+          <Link 
+                    onClick={() => navigate("/whatweDo")}
+
+          > LEARN NOW</Link>
         </Button>
       </Box>
     </div>

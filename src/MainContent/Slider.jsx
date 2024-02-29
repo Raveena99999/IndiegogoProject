@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthSlideContext } from "../context/AuthContextProvider";
 import {
-  Heading,
   Text,
   Button,
   Image,
@@ -9,9 +8,11 @@ import {
   Link,
   useBreakpointValue,
 } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 
 export default function Slider() {
   const { slide, setSlide, images } = useContext(AuthSlideContext);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -82,7 +83,10 @@ export default function Slider() {
           _hover={{ bg: "#E51075" }}
           mr={["10px", "20px"]}
         >
-          <Link href="http://127.0.0.1:5173/teamFavourites"> TEAM FAVOURITES</Link>
+          <Link 
+          onClick={() => navigate("/teamFavourites")}
+
+          > TEAM FAVOURITES</Link>
         
         </Button>
         <Button
@@ -92,9 +96,12 @@ export default function Slider() {
           borderRadius="2px"
           border="1px"
           borderColor="gray.200"
-          _hover={{ bg: "#E51075", borderColor: "gray" }}
+          _hover={{ bg: "#E51075", borderColor: "gray",color:"white"  }}
         >
-          <Link href="https://www.indiegogo.com/about/what-we-do">
+          <Link 
+                    onClick={() => navigate("/whatweDo")}
+
+          >
             LEARN NOW
           </Link>
         </Button>

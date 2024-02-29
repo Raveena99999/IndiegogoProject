@@ -12,11 +12,14 @@ import {
   Flex,
   Image,
 } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 
 import { useDisclosure } from "@chakra-ui/react";
 
 export default function Explore() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const navigate = useNavigate();
+
   const btnRef = React.useRef();
 
   return (
@@ -57,7 +60,8 @@ export default function Explore() {
                     src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8bGFwdG9wfGVufDB8fDB8fHww"
                   />
                   <Link
-                    href="https://www.indiegogo.com/explore/all?project_type=campaign"
+                    onClick={() => navigate("/ourTop10Finds")}
+
                     mt="10px"
                     _hover={{ color: "#E5107", textDecoration: "none" }}
                     textAlign="center"

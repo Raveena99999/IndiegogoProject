@@ -327,7 +327,7 @@ export default function UserCards() {
             style={{
               width: "100%",
               transition: "transform 0.3s ease",
-              marginBottom: "20px", // Add margin to prevent overlapping
+              marginBottom: "20px", 
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.transform = "translateY(-5px)";
